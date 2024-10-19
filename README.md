@@ -1,6 +1,6 @@
 # mathcompuni
-
-## Module Learning Outcomes
+## Engineering Mathematics and Computing: Task 1
+### Module Learning Outcomes
 The following module learning outcomes and professional body learning outcomes are tested in this
 assessment:
 1. Display fluency in algebraic and numerical manipulations of functions (such as polynomial,

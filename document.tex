@@ -444,11 +444,32 @@
     Since the goal was to utilize Matlab, I opted for this approach.\\[10pt] 
     However, this reduced Python version should suffice if a widely used and intuitive code is required.
     
-    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1_easy.py}{scripts/q1_easy.py}}}}]{scripts/q1_easy.py}
+    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1_easy.py}{scripts/q1\_easy.py}}}}]{scripts/q1_easy.py}
             
     \newpage
-       
-    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is:
-  
-      
+   \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
+    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is given by the formula:
+    
+    \[
+    V_{ab} = V \left(\frac{R_1 R_3 - R_2 R_4}{(R_1 + R_2)(R_3 + R_4)}\right)
+    \]
+    
+    Write a universal, user-friendly program that calculates the voltage difference \(V_{ab}\). 
+    
+    Test your program using the following values:\\
+    \vspace{1em}
+    \hspace{8em}
+    \centering
+    \begin{minipage}{0.4\textwidth}
+    \begin{itemize}[itemsep=-0.1cm]
+        \item \(V = 14\) volts
+        \item \(R_1 = 120.6\ \Omega\)
+        \item \(R_2 = 119.3\ \Omega\)
+        \item \(R_3 = 121.2\ \Omega\)
+        \item \(R_4 = 118.8\ \Omega\)
+    \end{itemize}
+    \end{minipage}
+    
+    \end{tcolorbox}
+    
 \end{document}

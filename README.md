@@ -3,18 +3,8 @@
 ## IMPORTANT
 
 To run most/all scripts
-
-- **Environment Setup:**
   - Install Python 3.x from [python.org](https://www.python.org/downloads/)
-  - Verify installation: `python --version`
-
-- **Required Packages:**
   - Install NumPy and Matplotlib: `pip install numpy matplotlib`
-  - For permission issues: Run command prompt as administrator
-
-- **Script Execution:**
-  - Install `q1.py` from my GitHub
-  - Run script
 
 ## Engineering Mathematics and Computing: Task 1
 

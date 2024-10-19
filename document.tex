@@ -438,47 +438,13 @@
     
     \centering
     \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1.py}{scripts/q1.py}}}}]{scripts/q1.py}
-
-\begin{itemize}[itemsep=-0.1cm]
-    \item \textbf{Environment Setup:}
-    \begin{itemize}[itemsep=-0.1cm]
-        \item Install Python 3.x from \url{https://www.python.org/downloads/}
-        \item Verify installation: \mbox{\colorbox{black}{\textcolor{white}{\texttt{python --version}}}}
-    \end{itemize}
     
-    \item \textbf{Required Packages:}
-    \begin{itemize}[itemsep=-0.1cm]
-        \item Install NumPy and Matplotlib: \mbox{\colorbox{black}{\textcolor{white}{\texttt{pip install numpy matplotlib}}}}
-        \item For permission issues: Run command prompt as administrator
-    \end{itemize}
+    \includegraphics[scale=0.7]{figures/Figure_1.png}
     
-    \item \textbf{Script Execution:}
-    \begin{itemize}[itemsep=-0.1cm]
-        \item Install \texttt{q1.py} from my GitHub
-    \item Run script
-    \end{itemize}
-
-    \end{itemize}
+    Since the goal was to utilize Matlab, I opted for this approach.\\[10pt] 
+    However, this reduced Python version should suffice if a widely used and intuitive code is required.
     
-     \textbf{Enjoy the Interactivity:} Follow prompts and explore the output!
-    \includegraphics[scale=0.7]{Figure_1.png}
-    
-    Since the goal was to utilize Matlab, I opted for this approach.\\ However, if a truly universal and user-friendly code is required, then this py simplified version should be suitable:
-    
-    \begin{lstlisting}[style=mypythonstyle,language=Python]
-import numpy as np
-
-def arc_length_parabola(a, b):
-    L_ABC=(1/2)*np.sqrt(b**2+16*a**2)+(b**2/(8*a))*np.log((4*a+np.sqrt(b**2+16*a**2))/b)
-    return L_ABC
-
-a = float(input("Enter the value of a (height): "))
-b = float(input("Enter the value of b (width): "))
-
-L_ABC = arc_length_parabola(a, b)
-
-print(f"The arc length L_ABC is: {L_ABC:.2f}")
-    \end{lstlisting}
+    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1_easy.py}{scripts/q1_easy.py}}}}]{scripts/q1_easy.py}
             
     \newpage
        

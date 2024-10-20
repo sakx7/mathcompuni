@@ -1,3 +1,9 @@
+"""
+Requirements to run:
+    - Python 3.x (https://www.python.org/)
+    - NumPy and Matplotlib (install with cmd prmp: pip install numpy matplotlib)
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button

@@ -12,8 +12,8 @@ function L_ABC = calculate_arc_length(a, b)
 end
 
 %prompt the user for input values
-a = input('Enter the value of a (height): ');
-b = input('Enter the value of b (width): ');
+a = input('Enter the value of a (height in cm): ');
+b = input('Enter the value of b (width in cm): ');
 
 %calculate the arc length by calling the function
 L_ABC = calculate_arc_length(a, b);

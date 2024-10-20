@@ -80,5 +80,5 @@ button.on_clicked(reset)
 
 update(None)
 
-plt.savefig('figures/Figure_1.png',dpi=400)
+plt.savefig('images/Figure_1.png',dpi=400)
 plt.show()

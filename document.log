@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.11)  20 OCT 2024 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.11)  20 OCT 2024 22:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1273,24 +1273,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1348,7 +1348,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 125.
+Package hyperref Info: Link coloring OFF on input line 128.
 (./document.out) (./document.out)
 \@outlinefile=\write7
 \openout7 = `document.out'.
@@ -1365,25 +1365,25 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \c@lstlisting=\count407
-LaTeX Font Info:    Trying to load font information for U+msa on input line 128
+LaTeX Font Info:    Trying to load font information for U+msa on input line 131
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 128
+LaTeX Font Info:    Trying to load font information for U+msb on input line 131
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-8.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-28.
+31.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1424,13 +1424,13 @@ st/fonts/enc/dvips/base/8r.enc}]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Chapter 1.
+Part A.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.151     \newpage
+l.139     \newpage
                   \centering\restoregeometry [1
 
 
@@ -1448,7 +1448,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.189     \newpage
+l.177     \newpage
                    [1
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/sha
@@ -1568,7 +1568,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Chapter 2.
+Part B.
 [11
 
 
@@ -1616,6 +1616,12 @@ LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ))
+<images/q1screenshot.png, id=140, 726.715pt x 137.51375pt>
+File: images/q1screenshot.png Graphic file (type png)
+<use images/q1screenshot.png>
+Package pdftex.def Info: images/q1screenshot.png  used on input line 428.
+(pdftex.def)             Requested size: 363.3566pt x 68.7567pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1629,10 +1635,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.432     \newpage
+l.429     \newpage
                    [11
 
-]
+ <./images/q1screenshot.png>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1655,10 +1661,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13])
-<figures/Figure_1.png, id=230, 722.7pt x 433.62pt>
-File: figures/Figure_1.png Graphic file (type png)
-<use figures/Figure_1.png>
-Package pdftex.def Info: figures/Figure_1.png  used on input line 482.
+<images/Figure_1.png, id=233, 722.7pt x 433.62pt>
+File: images/Figure_1.png Graphic file (type png)
+<use images/Figure_1.png>
+Package pdftex.def Info: images/Figure_1.png  used on input line 479.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
 
 
@@ -1669,7 +1675,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14 <./figures/Figure_1.png>] (./matlab scripts/q2.m
+[14 <./images/Figure_1.png>] (./matlab scripts/q2.m
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1693,13 +1699,13 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 283BD752F37370FE84685E6BAD2D318F;1202.
+(rerunfilecheck)             Checksum: AA6E188D75CF5FF72B87216C98D4B418;1110.
  ) 
 Here is how much of TeX's memory you used:
- 62398 strings out of 476182
- 1504431 string characters out of 5795594
- 2930742 words of memory out of 5000000
- 83405 multiletter control sequences out of 15000+600000
+ 62411 strings out of 476182
+ 1504753 string characters out of 5795594
+ 2859634 words of memory out of 5000000
+ 83416 multiletter control sequences out of 15000+600000
  587052 words of font info for 138 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  102i,13n,107p,729b,2303s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1715,10 +1721,10 @@ ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on document.pdf (19 pages, 475044 bytes).
+Output written on document.pdf (19 pages, 488836 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 407 compressed objects within 5 object streams
- 212 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 471 PDF objects out of 1000 (max. 8388607)
+ 409 compressed objects within 5 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

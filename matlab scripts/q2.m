@@ -3,7 +3,7 @@ function wheatstone_bridge_ui()
     fig = uifigure('Name', 'Wheatstone Bridge Circuit Calculator', 'Position', [100, 100, 600, 400]);
 
     % image stuff dont worry bout this 
-    imgURL = 'https://raw.githubusercontent.com/sakx7/mathcompuni/main/figures/wheatstone_bridge.jpg'; 
+    imgURL = 'https://raw.githubusercontent.com/sakx7/mathcompuni/main/images/wheatstone_bridge.jpg'; 
     localImgPath = fullfile(pwd, 'wheatstone_bridge.jpg');
     if ~isfile(localImgPath)
         try

@@ -36,6 +36,9 @@
 \usepackage{enumitem}
 \usepackage{pgf}
 
+\renewcommand{\thechapter}{\Alph{chapter}} % Use letters for parts
+\renewcommand{\chaptername}{Part} % Change "Chapter" to "Part"
+\renewcommand{\thesection}{\Alph{chapter}.\arabic{section}} % Use letters for sections
 
 \usepackage{listings}
 
@@ -131,22 +134,7 @@
     \thispagestyle{empty}
     \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0in}
 
-    \chapter{Part A: Mathematics}
-    \hrule\vspace{5em}\Large\noindent
-    \textbf{Notes:}\normalsize
-    
-    %\begin{itemize}
-    %    \item \textbf{Module Code:} EG4017
-    %    \item \textbf{Module Title:} Engineering Mathematics
-    %    \item \textbf{Assessment Title:} Engineering Mathematics and Computing - Task 1
-    %    \item \textbf{Summative Assessment:} This assignment contributes 50\% of module grade.
-    %    \item \textbf{Total Hours Required:} 25 hours per student
-    %    \item \textbf{Set by:} Dr. Sergey Khaustov (RVMB122)
-    %    \item \textbf{Contact:} S.Khaustov@kingston.ac.uk
-    %    \item \textbf{Submission Deadline:} November 7, 2024, before 5pm
-    %    \item \textbf{Feedback Release:} Formal feedback will be provided %within 20 working days after submission.
-    %\end{itemize}
-    
+    \chapter{Mathematics}
     
     \newpage\centering\restoregeometry
     
@@ -366,34 +354,44 @@
     \[\frac{b - g}{t} = a - 3\]
     \[\boxed{a = \frac{b - g}{t} + 3}\]
     
-    \newpage\raggedright
-    \thispagestyle{empty}
+    \newpage
+
     \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0in}
     
-    \chapter{Part B: Computing}
-
-    \hrule
+    \chapter{Computing}    
+    \thispagestyle{empty}
     \vspace{3em}
     \begin{center}
         \Large\textbf{Notes:}
     \end{center}
     \vspace{1em}
     \begin{itemize} 
-        \item All graphs and images were created using TikZ PGF. 
-        \item Code implementations are original and written in MATLAB and to strictly follow guidelines with some python also.
-        \textcolor{red}{In order to copy the code from my Github please follow the relevant links provided.} 
+        \item All graphs and images in the questions are created using TikZ PGF by yours truly. 
+        \item Code implementations are original and written primarily in MATLAB to adhere to guidelines, with some sections in Python. 
+        \textcolor{red}{For easy code access, please refer to my GitHub repository.} 
         \begin{itemize} 
-            \item Honestly, relying only on MATLAB feels a bit short-sighted. its a temporary student license, and no point getting used to it. focusing solely on MATLAB in this course means missing out on essential programming skills, assets and applicability. While I \textbf{have to use MATLAB} for this module, it's not fully aligned with the long-term goals that it states.
-            \end{itemize} 
-            \item Please consider the answers as a whole. 
-        \end{itemize}
-   
+            \item While I am required to use MATLAB for this module, relying solely on it feels somewhat short-sighted. It is a temporary student license, and focusing exclusively on MATLAB means missing out on essential programming skills and their broader applicability. Although I must use MATLAB for this course, it does not fully align with my long-term goals. 
+        \end{itemize} 
+        \item To develop a universal and user-friendly code for this Part, it is essential to enhance usability and accessibility. Here, I outline two main approaches that can effectively address these requirements:
+        \begin{enumerate}[itemsep=-0.1cm]
+            \item \textbf{Approach 1: Maximising the users experience.}\\
+            Creating a Graphical User Interface (GUI) can significantly improve the user experience, especially for those who are not familiar with coding.
+            \item \textbf{Approach 2: Interactive Programming Environment}\\
+            For users who prefer coding but still seek simplicity and clarity, an interactive programming environment can be a valuable alternative.        
+        \end{enumerate}  
+        Each code excerpt aims to accomplish one of these facets or strategies. For every question, I will offer at least one polished version of my response; its up to you to decide what that may be.
+        \item Finally, please consider the answers as a whole. 
+    \end{itemize}
+    
+
+
     \newpage
     \setcounter{page}{11}
     \centering
     \fancyhead[L]{Part B: Computing}
     \newpage
     \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.4in}
+    
    \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
     The arc length of a segment of a parabola \(ABC\) of an ellipse with semi-minor axes \(a\) and \(b\) is given
     approximately by:
@@ -424,11 +422,10 @@
     \end{tikzpicture}\\[1em]
     Write a universal, user-friendly code, test your programme and determine $L_{ABC}$ if $a=11$ cm and $b=9$ cm.
     \end{tcolorbox}
+  
     
-    Since the goal is utilize Matlab, this question is fairly easy this version should suffice if a widely used and intuitive code is required.\\
-    \vspace{2em}
-    
-    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1.m}{matlab scripts/q1\_easy.m}}}}]{matlab scripts/q1.m}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1.m}{matlab scripts/q1.m}}}}]{matlab scripts/q1.m}
+    \includegraphics[scale=0.5]{images/q1screenshot.png}
     \newpage
     
     
@@ -479,12 +476,12 @@
     
     \centering
     \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
-    \includegraphics[scale=0.5]{figures/Figure_1.png}\\
+    \includegraphics[scale=0.5]{images/Figure_1.png}\\
     With the sliders, you can interactively update the plot and change $a$ and $b$ values in real time!
     
 
     \newpage
-   \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
+   \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is:
    \[V_{ab} = V \left(\frac{R_1 R_3 - R_2 R_4}{(R_1 + R_2)(R_3 + R_4)}\right)\]
    Write a universal, user-friendly program that calculates the voltage difference \(V_{ab}\).\\    
@@ -521,7 +518,6 @@
     
     \end{tcolorbox}
     
-    Using MATLAB is the aim, thus answering this issue is not too difficult. I don't see a necessity for an interactive or complicated presentation for this specific question. I could include user interface components that would let users enter numbers by clicking resistors or something similar, but given the limitations, I'll go with a more cautious strategy. It really just depends on how fascinating or even marginally intriguing I find the question.\\
     \vspace{2em}
 
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2.m}}}}]{matlab scripts/q2.m}

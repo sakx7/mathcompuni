@@ -1,11 +1,5 @@
 # mathcompuni
 
-## IMPORTANT
-
-To run most/all scripts
-  - Install Python 3.x from [python.org](https://www.python.org/downloads/)
-  - Install NumPy and Matplotlib: `pip install numpy matplotlib`
-
 ## Engineering Mathematics and Computing: Task 1
 
 ### Module Learning Outcomes

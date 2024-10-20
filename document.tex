@@ -476,8 +476,8 @@
     
     \centering
     \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
-    \includegraphics[scale=0.5]{images/Figure_1.png}\\
-    With the sliders, you can interactively update the plot and change $a$ and $b$ values in real time!
+    \includegraphics[scale=0.55]{images/Figure_1.png}\\
+
     
 
     \newpage
@@ -521,9 +521,92 @@
     \vspace{2em}
 
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2.m}}}}]{matlab scripts/q2.m}
+    \includegraphics[scale=0.5]{images/wheat.png}
     
     \newpage
-
     
+    \begin{tcolorbox}[title={\color{black}{\section{Q2}}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+        \centering
+        Newton's law of cooling gives the temperature \( T(t) \) of an object at time \( t \) in terms of \( T_0 \), its temperature at \( t = 0 \), and \( T_s \), the temperature of the surroundings:
+        \[
+        T(t) = T_s + (T_0 - T_s)e^{-kt}
+        \]
+        A police officer arrives at a crime scene in a hotel room at 9:18 PM, where he finds a dead body. He immediately measures the body's temperature and finds it to be \( 26.4^\circ C \). Exactly one hour later, he measures the temperature again and finds it to be \( 25.5^\circ C \).\\[6pt]
+        Determine the time of death, assuming that the victim's body temperature was normal (\( 36.6^\circ C \)) prior to death, and that the room temperature was constant at \( 20.5^\circ C \).
+    \end{tcolorbox}
+    
+    To solve this problem, we will use Newton's law of cooling along with the given information to find the time of death. Let's break it down step by step:
+    
+    1. \textbf{Finding the cooling constant \( k \)}:
+    - At 9:18 PM (\( t = 0 \)): \( T_0 = 26.4^\circ C \)
+    - At 10:18 PM (\( t = 1 \) hour): \( T(1) = 25.5^\circ C \)
+    - Room temperature (\( T_s \)) = \( 20.5^\circ C \)
+    
+    Using the equation:
+    \[
+    T(t) = T_s + (T_0 - T_s)e^{-kt}
+    \]
+    
+    Plugging in the values:
+    \[
+    25.5 = 20.5 + (26.4 - 20.5)e^{-k \cdot 1}
+    \]
+    
+    This simplifies to:
+    \[
+    5 = 5.9e^{-k}
+    \]
+    
+    Rearranging gives:
+    \[
+    e^{-k} = \frac{5}{5.9}
+    \]
+    
+    Taking the natural logarithm:
+    \[
+    -k = \ln\left(\frac{5}{5.9}\right)
+    \]
+    Thus,
+    \[
+    k \approx -\ln\left(\frac{5}{5.9}\right) \approx 0.1656 \text{ per hour}
+    \]
+    
+    2. \textbf{Finding the time when \( T_0 = 36.6^\circ C \)}:
+    Now that we have \( k \), we can use the original equation to find \( t \):
+    \[
+    26.4 = 20.5 + (36.6 - 20.5)e^{-0.1656t}
+    \]
+    
+    Simplifying this:
+    \[
+    5.9 = 16.1e^{-0.1656t}
+    \]
+    
+    Taking the natural logarithm gives:
+    \[
+    e^{-0.1656t} = \frac{5.9}{16.1}
+    \]
+    
+    Taking the natural logarithm again:
+    \[
+    -0.1656t = \ln\left(\frac{5.9}{16.1}\right)
+    \]
+    
+    Finally, solving for \( t \):
+    \[
+    t = -\frac{\ln\left(\frac{5.9}{16.1}\right)}{0.1656} \approx 6.24 \text{ hours}
+    \]
+    
+    3. \textbf{Calculating the time of death}:
+    This means the body had been cooling for about \( 6.24 \) hours when the officer arrived at \( 9:18 \) PM.
+    
+    To find the time of death, we subtract \( 6.24 \) hours from \( 9:18 \) PM:
+    \[
+    9:18 \text{ PM} - 6.24 \text{ hours} \approx 3:04 \text{ PM}
+    \]
+    
+    Therefore, the estimated time of death is around \textbf{3:04 PM} on the same day.
+    
+    \textbf{Note:} This is an estimate based on the model and assumptions given. In real forensic work, many other factors would be considered for a more accurate determination of time of death.
 
 \end{document}

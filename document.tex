@@ -56,6 +56,21 @@
     stringstyle=\color{red},
     backgroundcolor=\color{gray!10},
 }
+\lstdefinestyle{matlab}{
+    language=Matlab,
+    basicstyle=\footnotesize\ttfamily\color{white},  % Main font in black
+    numbers=left,                                   % Line numbers on the left
+    numberstyle=\tiny\color{black},                  % Gray color for line numbers
+    numbersep=5pt,                                  % Distance between numbers and code
+    showstringspaces=false,                         % Do not show spaces in strings
+    frame=single,                                   % Single line frame around the code
+    breaklines=true,                                % Break lines if too long
+    keywordstyle=\color{purple!50!pink}\bfseries,             % Keywords in bold blue
+    commentstyle=\color{green}\itshape,          % Comments in italic dark gray
+    stringstyle=\color{orange},                       % Strings in teal
+    backgroundcolor=\color{black},                  % White background
+    morekeywords={input, fprintf, sqrt, log},       % Add MATLAB-specific functions as keywords
+}
 
 
 \makeatletter
@@ -333,24 +348,9 @@
         \Large\textbf{Notes:}
     \end{center}
     \vspace{1em}
-    \begin{itemize}
-        \item All graphs and images have been coded in TikZ PGF by yours truly.
-        \item Code implementations are also original work.
-        \item Please evaluate the answer to the questions in its whole. 
-    \end{itemize}
-    
-    \vspace{1em}
-    
-    \section*{Interpretation of Module Learning Outcomes}
-    
-    The module learning outcomes are seen as flexible guidelines that promote mastery of mathematical concepts alongside creative problem-solving approaches. This interpretation is supported by the following perspectives:
-    
-    \begin{enumerate}
-        \item \textbf{Diverse Language Utilization:} While \textbf{MATLAB} is specifically mentioned, the focus seems to be on demonstrating mathematical proficiency rather than adhering to a particular programming language. This opens the essentially lets me use tools like Python or R to effectively illustrate an understanding of the concepts. I will strive to align my work with MATLAB where possible.\\[1em]
-        But because of MATLAB's drawbacks—for instance, it's not free—I frequently find myself adopting alternatives. These come with difficulties including restricted access and a lack of software expertise. In general, I find it to be rather annoying.  
-                
-        \item \textbf{Understanding Over Language Proficiency:} The assessment values comprehension of mathematical methods and their application more than expertise in a specific software environment. This perspective enables the presentation of clear, well-documented solutions that reflect a solid understanding of the material, regardless of the medium employed.
-    \end{enumerate}
+    \begin{itemize} \item All graphs and images were created using TikZ PGF. \item Code implementations are original and written in MATLAB and to strictly follow guidelines with some python also. \begin{itemize} \item Relying exclusively on MATLAB is short-sighted, especially when open-source alternatives like Python offer more flexibility and long-term accessibility. Student licenses for MATLAB are temporary, leaving costly fees after graduation. \item While MATLAB is easy to learn, this short-term benefit can lead to dependency on a single tool. Python may take longer to master but provides skills that are more transferable and valuable in a variety of fields. \item Courses focusing on MATLAB may neglect teaching transferable programming skills. Python, with its broad applications and extensive libraries, is a better long-term choice for students in a world dominated by open-source tools. \item Despite the fact that using MATLAB is required to complete this module, I'm not sure I'm geared up to go face-first into something that contradicts the objectives of the module as a whole. \end{itemize} \item Please consider the answers as a whole. \end{itemize}
+   
+  
 
     \newpage
     \setcounter{page}{11}
@@ -389,7 +389,12 @@
     Write a universal, user-friendly code, test your programme and determine $L_{ABC}$ if $a=11$ cm and $b=9$ cm.
     \end{tcolorbox}
     
-
+    Since the goal is utilize Matlab, this question is fairly easy this version should suffice if a widely used and intuitive code is required.\\
+    \vspace{2em}
+    
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1_easy.py}{matlab scripts/q1\_easy.m}}}}]{matlab scripts/q1_easy.m}
+    \newpage
+    \subsection{Advanced version}
     We are tasked with analyzing a parabola where:\\
     \vspace{1em}
     \hspace{3.8em}
@@ -400,8 +405,7 @@
     \end{itemize}
     \end{minipage}\\
     \vspace*{1em}
-    
-    To plot the parabola, we must first formulate an equation in terms of these factors. Initially, we begin with a simple parabola in the general shape shown in the graph. Our goal is to select a reasonable function, with variables associated with the $x$ scale and $y$ location of the parabola:    
+    My goal is to plot the parabola, first by formulating an equation in terms of these factors. Initially, we begin with a simple parabola in the general shape ($x^2$) similar to shown in the graph. Our goal is to select a reasonable function, with variables associated with the $x$ scale and $y$ location of the parabola:    
     \[y = -(\beta x)^2 + \gamma\]
     Given our problem statement:\\
     \vspace{1em}
@@ -422,8 +426,6 @@
     Substituting $\gamma$ and $\beta$ into our original equation:
     \[\boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}\]
     This is our final parabola equation in terms of $a$ and $b$.
-    \newpage
-    
     The arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ is given by:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2 + 16a^2} + \frac{b^2}{8a}\ln\left(\frac{4a + \sqrt{b^2 + 16a^2}}{b}\right)\]
     When implementing this in a program:
@@ -437,15 +439,11 @@
     The rest is just nitpicky presentation, all just preference.
     
     \centering
-    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1.py}{scripts/q1.py}}}}]{scripts/q1.py}
+    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1.py}{scripts/q1.py}}}}]{scripts/q1_advanced.py}
     
     \includegraphics[scale=0.7]{figures/Figure_1.png}
     
-    Since the goal was to utilize Matlab, I opted for this approach.\\[10pt] 
-    However, this reduced Python version should suffice if a widely used and intuitive code is required.
-    
-    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{blue}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/scripts/q1_easy.py}{scripts/q1\_easy.py}}}}]{scripts/q1_easy.py}
-            
+
     \newpage
    \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
     The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is given by the formula:

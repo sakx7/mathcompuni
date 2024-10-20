@@ -17,7 +17,7 @@ ax_slider_b = plt.axes([0.1, 0.1, 0.8, 0.03])
 slider_a = Slider(ax_slider_a, 'a (height)', 0.1, 20, valinit=initial_a, valfmt='%0.2f')
 slider_b = Slider(ax_slider_b, 'b (width)', 0.1, 20, valinit=initial_b, valfmt='%0.2f')
 
-x = np.linspace(-10, 10, 400)
+x = np.linspace(-10, 10, 1000)
 
 def update(val):
     a = slider_a.val
@@ -28,19 +28,23 @@ def update(val):
     # should add if a > 0 and b != 0: but im not going to since i set the slider limits accordingly
     y = -((2*np.sqrt(a))*x/b)**2 + a
     ax.plot(x, y, label=r'$y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a$', color='blue')
-    ax.vlines(0, 0, a, color='red', label=r'$a$ (height)')
-    ax.hlines(0, -b/2, b/2, color='green', label=r'$b$ (width)')
+
+    ax.vlines(0, 0, a, color='red',linewidth=2 , zorder=10, label=r'$a$ (height)')
+    ax.hlines(0, -b/2, b/2, color='green',linewidth=2, zorder=10, label=r'$b$ (width)')
     
+    ax.text(0.05, a/2, f'a = {a:.2f} cm', color='red', fontsize=10, verticalalignment='bottom')
+    ax.text(0, 0.05, f'b = {b:.2f} cm', color='green', fontsize=10, horizontalalignment='right')
+
     A_x = -b/2
     C_x = b/2
     
-    ax.plot(A_x, 0, 'o', color='purple', label=r'Point $A = (-\frac{b}{2}, 0)$')
-    ax.plot(0, a, 'o', color='orange', label=r'Point $B = (0, a)$')
-    ax.plot(C_x, 0, 'o', color='purple', label=r'Point $C = (\frac{b}{2}, 0)$')
+    ax.plot(A_x, 0, 'o', zorder=10, color='purple', label=r'Point $A = (-\frac{b}{2}, 0)$')
+    ax.plot(0, a, 'o',zorder=10,  color='orange', label=r'Point $B = (0, a)$')
+    ax.plot(C_x, 0, 'o',zorder=10, color='purple', label=r'Point $C = (\frac{b}{2}, 0)$')
     
-    ax.annotate('A', (A_x, 0), textcoords="offset points", xytext=(0,10), ha='center', color='purple')
-    ax.annotate('B', (0, a), textcoords="offset points", xytext=(10,0), ha='center', color='orange')
-    ax.annotate('C', (C_x, 0), textcoords="offset points", xytext=(0,10), ha='center', color='purple')
+    ax.annotate('A', (A_x, 0), textcoords="offset points", xytext=(-5,7), ha='center', color='purple')
+    ax.annotate('B', (0, a), textcoords="offset points", xytext=(10,5), ha='center', color='orange')
+    ax.annotate('C', (C_x, 0), textcoords="offset points", xytext=(5,7), ha='center', color='purple')
 
     ax.set_title(f'Arc Length Calculation')
     ax.set_xlabel(r'$L_{ABC} = \frac{1}{2}\sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'} + \frac{' + f'({b:.2f})^2' + r'}{8(' + f'{a:.2f}' + r')}\ln\left(\frac{4(' + f'{a:.2f}' + r') + \sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'}}{' + f'{b:.2f}' + r'}\right) \approx ' + f'{L_ABC:.2f}$')
@@ -70,5 +74,5 @@ button.on_clicked(reset)
 
 update(None)
 
-plt.savefig('Figure_1.png',dpi=400)
+plt.savefig('figures/Figure_1.png',dpi=400)
 plt.show()

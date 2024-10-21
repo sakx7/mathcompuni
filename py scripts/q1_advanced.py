@@ -53,7 +53,7 @@ def update(val):
     ax.annotate('C', (C_x, 0), textcoords="offset points", xytext=(5,7), ha='center', color='purple')
 
     ax.set_title(f'Arc Length Calculation')
-    ax.set_xlabel(r'$L_{ABC} = \frac{1}{2}\sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'} + \frac{' + f'({b:.2f})^2' + r'}{8(' + f'{a:.2f}' + r')}\ln\left(\frac{4(' + f'{a:.2f}' + r') + \sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'}}{' + f'{b:.2f}' + r'}\right) \approx ' + f'{L_ABC:.2f}$')
+    ax.set_xlabel(r'$L_{ABC} = \frac{1}{2}\sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'} + \frac{' + f'({b:.2f})^2' + r'}{8(' + f'{a:.2f}' + r')}\ln\left(\frac{4(' + f'{a:.2f}' + r') + \sqrt{' + f'({b:.2f})^2 + 16({a:.2f})^2' + r'}}{' + f'{b:.2f}' + r'}\right) \approx ' + f'{L_ABC:.2f}$', size=14)
 
     ax.set_ylim(-1, a + 1)
     ax.set_xlim(-b/2 - 1, b/2 + 1)

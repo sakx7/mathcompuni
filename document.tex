@@ -372,14 +372,18 @@
         \begin{itemize} 
             \item While I am required to use MATLAB for this module, relying solely on it feels somewhat short-sighted. It is a temporary student license, and focusing exclusively on MATLAB means missing out on essential programming skills and their broader applicability. Although I must use MATLAB for this course, it does not fully align with my long-term goals. 
         \end{itemize} 
-        \item To develop a universal and user-friendly code for this Part, it is essential to enhance usability and accessibility. Here, I outline two main approaches that can effectively address these requirements:
-        \begin{enumerate}[itemsep=-0.1cm]
-            \item \textbf{Approach 1: Maximising the users experience.}\\
-            Creating a Graphical User Interface (GUI) can significantly improve the user experience, especially for those who are not familiar with coding.
-            \item \textbf{Approach 2: Interactive Programming Environment}\\
-            For users who prefer coding but still seek simplicity and clarity, an interactive programming environment can be a valuable alternative.        
-        \end{enumerate}  
-        Each code excerpt aims to accomplish one of these facets or strategies. For every question, I will offer at least one polished version of my response; its up to you to decide what that may be.
+        \item To develop a robust, universal, and user-friendly code for this section, it is crucial to consider both usability and accessibility across a broad spectrum of potential users. Whether users are seasoned developers or novices, the approach taken should cater to their needs in an intuitive and efficient manner. Two primary strategies can be employed to achieve this:
+        
+        \begin{enumerate}[itemsep=-0.1cm] 
+            \item \textbf{Approach 1: Enhancing User Experience through Clear and Visual Representation of Mathematical Solutions}\ When solving complex mathematical problems using software such as MATLAB, presenting the results in a clear and visually engaging format is crucial for enhancing the user’s comprehension and interaction with the solution. Whether dealing with calculus, linear algebra, vector analysis, geometry, trigonometry, or statistical data, effective output presentation is key. The following strategies can be used to achieve this: \begin{itemize}[itemsep=-0.1cm] \item \textit{Graphical Representation of Mathematical Solutions}: Solutions involving differentiation, integration, matrix operations, or vector analysis can often be more intuitively understood when visualized. Plotting graphs of functions (e.g., derivatives, integrals), 3D surfaces, vector fields, and matrix visualizations helps users grasp complex concepts quickly. MATLAB's built-in plotting functions such as \texttt{plot}, \texttt{surf}, and \texttt{quiver} can be utilized to generate these visualizations. \item \textit{Interactive Graphical Interfaces for Mathematical Exploration}: Creating interactive UI elements, such as sliders for parameter adjustment, allows users to dynamically explore how changes in inputs affect the solution. For example, users can visualize the effects of altering coefficients in a system of differential equations or observe real-time changes in vector fields with interactive 3D plots. \item \textit{Formatted Output of Analytical Results}: For problems involving algebraic solutions (e.g., symbolic differentiation, integration, matrix factorizations), presenting the results in a neatly formatted output, using LaTeX-style expressions or equation editors, ensures clarity. MATLAB's \texttt{live scripts} and symbolic math toolbox can display these outputs in a way that is both readable and professional. \item \textit{Data Analysis and Statistical Visualization}: When evaluating statistical data, probability distributions, or regression models, it's essential to represent results in charts such as histograms, scatter plots, box plots, or pie charts. Visual tools for analyzing statistical variance, probability distributions, or hypothesis testing can make data-driven insights more accessible. \item \textit{Customization and Export Options}: Users should have the option to export results, such as plots and formatted tables, in various formats (PDF, CSV, images) to integrate them into reports or further analyses. This flexibility enhances the user’s ability to apply the results to real-world problems. \end{itemize}
+            \item \textbf{Approach 2: Providing an Interactive Programming Environment}\ For users more comfortable with programming, but still seeking a level of simplicity, an interactive coding environment can serve as an excellent middle ground. This environment would provide: \begin{itemize}[itemsep=-0.1cm] 
+                \item \textit{Clear and Accessible Code Snippets}: Providing well-commented, modular code blocks that users can easily adapt and integrate into their own projects encourages experimentation without requiring deep understanding of the entire system. 
+                \item \textit{Interactive Command-Line Interface (CLI)}: An interactive CLI can guide users through the execution of the code by providing prompts, options, and feedback, making it easier to follow steps and understand what each part of the code accomplishes. 
+                \item \textit{Jupyter Notebooks or Similar Tools}: Environments like Jupyter Notebooks allow users to experiment with the code interactively, running small sections, visualizing results, and receiving immediate feedback, all while maintaining clarity and structure in the workflow. 
+            \end{itemize} 
+        \end{enumerate}
+        
+        In summary, these two approaches collectively cater to both ends of the user spectrum, ensuring that the code is accessible, user-friendly, and adaptable. For each query or task, I will provide at least one refined solution, allowing flexibility for users to select the one that best meets their individual preferences and expertise.
         \item Finally, please consider the answers as a whole. 
     \end{itemize}
     
@@ -473,14 +477,21 @@
     \raggedright
     
     The rest is just nitpicky presentation, all just preference i tried to do this in MATLAB but it don't really feel nice just finicky. ao i did in py, it is possible in MATLAB though.
+    \newpage
     
     \centering
-    \lstinputlisting[style=mypythonstyle, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
+    
+    \href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{\textcolor{\link}{py scripts/q1\_advanced.py}}\\
     \includegraphics[scale=0.55]{images/Figure_1.png}\\
+    \href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1_advanced.m}{\textcolor{\link}{matlab scripts/q1\_advanced.m}}
+    \includegraphics[scale=0.4]{images/rmatFigure_1.png}\\
+   
+    %\lstinputlisting[style=mypythonstyle,
+    %title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
 
     
 
-    \newpage
+   \newpage
    \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is:
    \[V_{ab} = V \left(\frac{R_1 R_3 - R_2 R_4}{(R_1 + R_2)(R_3 + R_4)}\right)\]

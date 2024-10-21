@@ -356,15 +356,17 @@
     
     \newpage
 
-    \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0in}
+    \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.3in}
     
     \chapter{Computing}    
     \thispagestyle{empty}
-    \vspace{3em}
+    Part B should include commented MATLAB code and
+    screenshots of the command window and graphs. All graph formatting must be done by code. All
+    programmes should have user-friendly input and formatted output.\\
+    \vspace{0.4em}
     \begin{center}
         \Large\textbf{Notes:}
     \end{center}
-    \vspace{1em}
     \begin{itemize} 
         \item All graphs and images in the questions are created using TikZ PGF by yours truly. 
         \item Code implementations are original and written primarily in MATLAB to adhere to guidelines, with some sections in Python. 
@@ -375,7 +377,8 @@
         \item To develop a robust, universal, and user-friendly code for this section, it is crucial to consider both usability and accessibility across a broad spectrum of potential users. Whether users are seasoned developers or novices, the approach taken should cater to their needs in an intuitive and efficient manner. Two primary strategies can be employed to achieve this:
         
         \begin{enumerate}[itemsep=-0.1cm] 
-            \item \textbf{Approach 1: Enhancing User Experience through Clear and Visual Representation of Mathematical Solutions}\ When solving complex mathematical problems using software such as MATLAB, presenting the results in a clear and visually engaging format is crucial for enhancing the user’s comprehension and interaction with the solution. Whether dealing with calculus, linear algebra, vector analysis, geometry, trigonometry, or statistical data, effective output presentation is key. The following strategies can be used to achieve this: \begin{itemize}[itemsep=-0.1cm] \item \textit{Graphical Representation of Mathematical Solutions}: Solutions involving differentiation, integration, matrix operations, or vector analysis can often be more intuitively understood when visualized. Plotting graphs of functions (e.g., derivatives, integrals), 3D surfaces, vector fields, and matrix visualizations helps users grasp complex concepts quickly. MATLAB's built-in plotting functions such as \texttt{plot}, \texttt{surf}, and \texttt{quiver} can be utilized to generate these visualizations. \item \textit{Interactive Graphical Interfaces for Mathematical Exploration}: Creating interactive UI elements, such as sliders for parameter adjustment, allows users to dynamically explore how changes in inputs affect the solution. For example, users can visualize the effects of altering coefficients in a system of differential equations or observe real-time changes in vector fields with interactive 3D plots. \item \textit{Formatted Output of Analytical Results}: For problems involving algebraic solutions (e.g., symbolic differentiation, integration, matrix factorizations), presenting the results in a neatly formatted output, using LaTeX-style expressions or equation editors, ensures clarity. MATLAB's \texttt{live scripts} and symbolic math toolbox can display these outputs in a way that is both readable and professional. \item \textit{Data Analysis and Statistical Visualization}: When evaluating statistical data, probability distributions, or regression models, it's essential to represent results in charts such as histograms, scatter plots, box plots, or pie charts. Visual tools for analyzing statistical variance, probability distributions, or hypothesis testing can make data-driven insights more accessible. \item \textit{Customization and Export Options}: Users should have the option to export results, such as plots and formatted tables, in various formats (PDF, CSV, images) to integrate them into reports or further analyses. This flexibility enhances the user’s ability to apply the results to real-world problems. \end{itemize}
+            \item \textbf{Approach 1: Enhancing User Experience through Clear and Visual Representation of Mathematical Solutions}\ When solving complex mathematical problems using software such as MATLAB, presenting the results in a clear and visually engaging format is crucial for enhancing the user’s comprehension and interaction with the solution. Whether dealing with calculus, linear algebra, vector analysis, geometry, trigonometry, or statistical data, effective output presentation is key. The following strategies can be used to achieve this: \begin{itemize}[itemsep=-0.1cm] \item \textit{Graphical Representation of Mathematical Solutions}: Solutions involving differentiation, integration, matrix operations, or vector analysis can often be more intuitively understood when visualized. Plotting graphs of functions (e.g., derivatives, integrals), 3D surfaces, vector fields, and matrix visualizations helps users grasp complex concepts quickly. MATLAB's built-in plotting functions such as \texttt{plot}, \texttt{surf}, and \texttt{quiver} can be utilized to generate these visualizations. \item \textit{Interactive Graphical Interfaces for Mathematical Exploration}: Creating interactive UI elements, such as sliders for parameter adjustment, allows users to dynamically explore how changes in inputs affect the solution. For example, users can visualize the effects of altering coefficients in a system of differential equations or observe real-time changes in vector fields with interactive 3D plots. \item \textit{Formatted Output of Analytical Results}: For problems involving algebraic solutions (e.g., symbolic differentiation, integration, matrix factorizations), presenting the results in a neatly formatted output, using LaTeX-style expressions or equation editors, ensures clarity. MATLAB's \texttt{live scripts} and symbolic math toolbox can display these outputs in a way that is both readable and professional. \item \textit{Data Analysis and Statistical Visualization}: When evaluating statistical data, probability distributions, or regression models, it's essential to represent results in charts such as histograms, scatter plots, box plots, or pie charts. Visual tools for analyzing statistical variance, probability distributions, or hypothesis testing can make data-driven insights more accessible. 
+             \end{itemize}
             \item \textbf{Approach 2: Providing an Interactive Programming Environment}\ For users more comfortable with programming, but still seeking a level of simplicity, an interactive coding environment can serve as an excellent middle ground. This environment would provide: \begin{itemize}[itemsep=-0.1cm] 
                 \item \textit{Clear and Accessible Code Snippets}: Providing well-commented, modular code blocks that users can easily adapt and integrate into their own projects encourages experimentation without requiring deep understanding of the entire system. 
                 \item \textit{Interactive Command-Line Interface (CLI)}: An interactive CLI can guide users through the execution of the code by providing prompts, options, and feedback, making it easier to follow steps and understand what each part of the code accomplishes. 
@@ -394,7 +397,7 @@
     \centering
     \fancyhead[L]{Part B: Computing}
     \newpage
-    \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.4in}
+    \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.3in}
     
    \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
     The arc length of a segment of a parabola \(ABC\) of an ellipse with semi-minor axes \(a\) and \(b\) is given
@@ -429,7 +432,7 @@
   
     
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1.m}{matlab scripts/q1.m}}}}]{matlab scripts/q1.m}
-    \includegraphics[scale=0.5]{images/q1screenshot.png}
+    \includegraphics[width=1\textwidth]{images/q1screen.png}
     \newpage
     
     
@@ -445,7 +448,7 @@
     \end{itemize}
     \end{minipage}\\
     \vspace*{1em}
-    My goal is to plot the parabola, first by formulating an equation in terms of these factors. Initially, we begin with a simple parabola in the general shape ($x^2$) similar to shown in the graph. Our goal is to select a reasonable function, with variables associated with the $x$ scale and $y$ location of the parabola:    
+    My goal is to plot the parabola, first by formulating an equation in terms of these factors. Initially, we begin with a simple parabola in the general shape ($x^2$) similar to shown in the question. Our goal is to select a reasonable function, with variables associated with the $x$ scale and $y$ location of the parabola:    
     \[y = -(\beta x)^2 + \gamma\]
     Given our problem statement:\\
     \vspace{1em}
@@ -465,26 +468,27 @@
     Note: This requires $b \neq 0$ and $\sqrt{a} \neq 0$ (i.e., $a > 0$).\\
     Substituting $\gamma$ and $\beta$ into our original equation:
     \[\boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}\]
-    This is our final parabola equation in terms of $a$ and $b$.
+    This is our final parabola equation in terms of $a$ and $b$.\\
     The arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ is given by:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2 + 16a^2} + \frac{b^2}{8a}\ln\left(\frac{4a + \sqrt{b^2 + 16a^2}}{b}\right)\]
     When implementing this in a program:
     \begin{itemize}[itemsep=-0.1cm]
         \item Ensure that when there are no limit parameters for the inputs \(a\) and \(b\), the conditions \(a > 0\) and \(b \neq 0\) are appropriately handled.
         \item Update the plot of \(y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\) so that the sliders for \(a\) and \(b\) directly control the height and width, respectively.
-        \item Calculate the arc length of the parabola using a function with inputs \(a\) and \(b\), and display the result in the plot.
+        \item Calculate the arc length of the parabola using the function given the question with inputs \(a\) and \(b\), and display the result in the plot.
     \end{itemize}
     \raggedright
     
-    The rest is just nitpicky presentation, all just preference i tried to do this in MATLAB but it don't really feel nice just finicky. ao i did in py, it is possible in MATLAB though.
+    For the remaining portion, it just boils down to presentation and flavour. I tried using MATLAB to do this, but it seemed really awkward and unreliable. Although its fine \texttt{.m} version still could require development, but I find that the \texttt{.py} version functions better.
+
     \newpage
     
     \centering
     
-    \href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{\textcolor{\link}{py scripts/q1\_advanced.py}}\\
-    \includegraphics[scale=0.55]{images/Figure_1.png}\\
-    \href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1_advanced.m}{\textcolor{\link}{matlab scripts/q1\_advanced.m}}
-    \includegraphics[scale=0.4]{images/rmatFigure_1.png}\\
+    \href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{\textcolor{\link}{\textbf{py scripts/q1\_advanced.py}}}\\
+    \includegraphics[width=1\textwidth]{images/Figure_1.png}\\
+    \href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1_advanced.m}{\textcolor{\link}{\textbf{matlab scripts/q1\_advanced.m}}}
+    \includegraphics[width=1\textwidth]{images/rmatFigure_1.png}\\
    
     %\lstinputlisting[style=mypythonstyle,
     %title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
@@ -528,11 +532,21 @@
 \end{minipage}
     
     \end{tcolorbox}
-    
-    \vspace{2em}
 
-    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2.m}}}}]{matlab scripts/q2.m}
-    \includegraphics[scale=0.5]{images/wheat.png}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2\_.m}}}}]{matlab scripts/q2.m}
+    \includegraphics[width=0.9\textwidth]{images/q2.png}
+    \newpage
+    \subsection{Somewhat Advanced Version}
+    I say "somewhat" because this isn't all that advanced. One way to improve this project is by creating an animation that demonstrates how the voltage changes over time, perhaps using Manim. You could also incorporate real-time elements, such as allowing users to adjust the resistors with sliders, making it interactive. Ultimately, it’s all about how creative you want to be with this.\\[1em]
+    
+    For now, I have developed a nice UI interface in MATLAB, which should suffice. If I have enough time and motivation, I may revisit this and create the animation.\\
+    \vspace{1em}
+    \href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2_advanced.m}{\textcolor{\link}{\textbf{matlab scripts/q2\_advanced.m}}}\\[1em]
+    
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{images/realwheat.png}
+    \end{center}
+
     
     \newpage
     
@@ -546,78 +560,41 @@
         Determine the time of death, assuming that the victim's body temperature was normal (\( 36.6^\circ C \)) prior to death, and that the room temperature was constant at \( 20.5^\circ C \).
     \end{tcolorbox}
     
-    To solve this problem, we will use Newton's law of cooling along with the given information to find the time of death. Let's break it down step by step:
+    To solve this problem, i need to fully understand it first before actually importing computing aspects. First i will use Newton's law of cooling along with the given information to find the time of death. Let's break it down step by step:\\
     
-    1. \textbf{Finding the cooling constant \( k \)}:
-    - At 9:18 PM (\( t = 0 \)): \( T_0 = 26.4^\circ C \)
-    - At 10:18 PM (\( t = 1 \) hour): \( T(1) = 25.5^\circ C \)
-    - Room temperature (\( T_s \)) = \( 20.5^\circ C \)
+    1. \textbf{Finding the cooling constant \( k \)}:\\
+    - At 9:18 PM (\( t = 0 \)): \( T_0 = 26.4^\circ C \)\\
+    - At 10:18 PM (\( t = 1 \) hour): \( T(1) = 25.5^\circ C \)\\
+    - Room temperature (\( T_s \)) = \( 20.5^\circ C \)\\
     
     Using the equation:
-    \[
-    T(t) = T_s + (T_0 - T_s)e^{-kt}
-    \]
-    
+    \[T(t) = T_s + (T_0 - T_s)e^{-kt}\]
     Plugging in the values:
-    \[
-    25.5 = 20.5 + (26.4 - 20.5)e^{-k \cdot 1}
-    \]
-    
+    \[25.5 = 20.5 + (26.4 - 20.5)e^{-k \cdot 1}\]
     This simplifies to:
-    \[
-    5 = 5.9e^{-k}
-    \]
-    
+    \[5 = 5.9e^{-k}\]
     Rearranging gives:
-    \[
-    e^{-k} = \frac{5}{5.9}
-    \]
-    
+    \[e^{-k} = \frac{5}{5.9}\]
     Taking the natural logarithm:
-    \[
-    -k = \ln\left(\frac{5}{5.9}\right)
-    \]
+    \[-k = \ln\left(\frac{5}{5.9}\right)\]
     Thus,
-    \[
-    k \approx -\ln\left(\frac{5}{5.9}\right) \approx 0.1656 \text{ per hour}
-    \]
-    
-    2. \textbf{Finding the time when \( T_0 = 36.6^\circ C \)}:
+    \[k \approx -\ln\left(\frac{5}{5.9}\right) \approx 0.1656 \text{ per hour}\]
+    2. \textbf{Finding the time when \( T_0 = 36.6^\circ C \)}:\\
     Now that we have \( k \), we can use the original equation to find \( t \):
-    \[
-    26.4 = 20.5 + (36.6 - 20.5)e^{-0.1656t}
-    \]
-    
+    \[26.4 = 20.5 + (36.6 - 20.5)e^{-0.1656t}\]
     Simplifying this:
-    \[
-    5.9 = 16.1e^{-0.1656t}
-    \]
-    
+    \[5.9 = 16.1e^{-0.1656t}\]
     Taking the natural logarithm gives:
-    \[
-    e^{-0.1656t} = \frac{5.9}{16.1}
-    \]
-    
+    \[e^{-0.1656t} = \frac{5.9}{16.1}\]
     Taking the natural logarithm again:
-    \[
-    -0.1656t = \ln\left(\frac{5.9}{16.1}\right)
-    \]
-    
+    \[-0.1656t = \ln\left(\frac{5.9}{16.1}\right)\]
     Finally, solving for \( t \):
-    \[
-    t = -\frac{\ln\left(\frac{5.9}{16.1}\right)}{0.1656} \approx 6.24 \text{ hours}
-    \]
-    
-    3. \textbf{Calculating the time of death}:
+    \[t = -\frac{\ln\left(\frac{5.9}{16.1}\right)}{0.1656} \approx 6.24 \text{ hours}\]
+    3. \textbf{Calculating the time of death}:\\
     This means the body had been cooling for about \( 6.24 \) hours when the officer arrived at \( 9:18 \) PM.
-    
     To find the time of death, we subtract \( 6.24 \) hours from \( 9:18 \) PM:
-    \[
-    9:18 \text{ PM} - 6.24 \text{ hours} \approx 3:04 \text{ PM}
-    \]
-    
-    Therefore, the estimated time of death is around \textbf{3:04 PM} on the same day.
-    
+    \[9:18 \text{ PM} - 6.24 \text{ hours} \approx 3:04 \text{ PM}\]
+    Therefore, the estimated time of death is around \textbf{3:04 PM} on the same day.\\[1em]
     \textbf{Note:} This is an estimate based on the model and assumptions given. In real forensic work, many other factors would be considered for a more accurate determination of time of death.
 
 \end{document}

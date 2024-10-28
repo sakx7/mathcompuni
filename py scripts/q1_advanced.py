@@ -23,8 +23,8 @@ ax_slider_b = plt.axes([0.1, 0.1, 0.8, 0.03])
 slider_a = Slider(ax_slider_a, 'a (height)', 0.1, 20, valinit=initial_a, valfmt='%0.2f')
 slider_b = Slider(ax_slider_b, 'b (width)', 0.1, 20, valinit=initial_b, valfmt='%0.2f')
 
-x = np.linspace(-10, 10, 1000)
-
+x = np.linspace(-10, 10, 400)
+1000
 def update(val):
     a = slider_a.val
     b = slider_b.val

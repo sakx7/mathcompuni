@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run MATLAB Script",
+            "type": "shell",
+            "command": "/home/sak/bin/matlab",  // Path to your MATLAB executable
+            "args": [
+                "-nodisplay",
+                "-nosplash",
+                "-r",
+                "${fileBasenameNoExtension}; exit;"  // Runs the currently open .m file
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "/property:GenerateFullPaths=true",
+                "/t:build",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

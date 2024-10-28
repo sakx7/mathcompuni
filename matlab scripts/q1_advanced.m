@@ -1,6 +1,6 @@
 function interactive_parabola()
 
-    %this is merely an imitation of the Python version.
+    %this is merely an imitation of the Python version that versoin works alot better.
     %i hope the latex renders correctly for you, 
     %my render engine seems to be somewhat erratic. works bt not clean
     %use opengl, see if it does well there
@@ -13,7 +13,8 @@ function interactive_parabola()
         fprintf('New Default Figure Renderer: %s\n', newRenderer);
     end
     %experiment with the engines.
-    
+
+
     initial_a = 11.0;
     initial_b = 9.0;
     

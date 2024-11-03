@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usetikzlibrary{calc,patterns,angles,quotes}
 \geometry{margin=1in,left=0.6in,right=0.6in,bottom=0.5in}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
@@ -36,6 +37,9 @@
 \usepackage{placeins}
 \usepackage{enumitem}
 \usepackage{pgf}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{tikz-3dplot}
 
 \renewcommand{\thechapter}{\Alph{chapter}} % Use letters for parts
 \renewcommand{\chaptername}{Part} % Change "Chapter" to "Part"
@@ -48,6 +52,7 @@
 \usepackage{courier}
 \usepackage{xcolor}
 \usepackage{color}
+\def\ni{blue!20!white}
 
 \lstdefinestyle{mypythonstyle}{
     language=Python,
@@ -160,11 +165,11 @@
     \[u = \ln(3x)\]
     Let:
     \[\delta = 3x \qquad u = \ln(\delta)\]
-    \[\frac{du}{d\delta} = \frac{1}{\delta} \qquad \frac{d\delta}{dx} = 3\]
+    \[\frac{d\delta}{dx} = 3 \qquad \frac{du}{d\delta} = \frac{1}{\delta} \]
     Using the chain rule, we can find:
     \[\frac{du}{dx} = \frac{du}{d\delta} \cdot \frac{d\delta}{dx}\]
-    \[\frac{du}{dx} = \frac{3}{\delta} = \frac{3}{3x}= \frac{1}{x}\]
-    General rule for composite/nested functions is solved via chain rule it's:
+    \[\frac{du}{dx} = \frac{3}{\delta} = \frac{3}{3x}= \frac{1}{x}\]\\[1em]
+    General rule for composite functions is solved via chain rule it's:\\[-20pt]
     \[\frac{d}{dx}(f(g(x))) = f'(g(x))\cdot g'(x)\]
     \end{minipage}\hspace{1em}\vrule\hspace{-2.5em}
     \begin{minipage}{0.4\textwidth}
@@ -211,34 +216,39 @@
     \begin{tcolorbox}[title=\color{black}{\section{Q4}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
         Express \( \cos t-8 \sin t \) in the form \( A \cos (\omega t+\alpha) \), where \( \alpha \geq 0 \)
     \end{tcolorbox}
-    you see the thing is the left side, \( \cos t - 8 \sin t \), is standard, but the right side introduces a different frequency, \( \omega \), in \( A \cos (\omega t + \alpha) \).\\[10pt]
-    Since the left side has a frequency of 1, im just gonna assume \( \omega = 1 \) for simplicity. If \( \omega \) were different, you would need to rewrite the left side in terms of \( \omega t \), but this isn't specified in the problem.\\
-    \vspace{0.5em}\hrule\vspace{0.5em}
-    The angle subtraction formula is:
-    \[A \cos(t - \phi) = A \cos(\phi) \cos(t) + A \sin(\phi) \sin(t)\]
-    By comparing coefficients from both sides, we have:
-    \begin{align*}
-        a & = A \cos(\phi) \\
-        b & = A \sin(\phi)
-    \end{align*}
-    To find $A$ we use $A = \sqrt{a^2 + b^2}$\\
-    \vspace*{1em}
-    \begin{minipage}{0.45\textwidth}\centering
-        This arises from squaring both equations \(a = A \cos(\phi)\) and \(b = A \sin(\phi)\):\\[1em]
-        $a^2 + b^2 = (A \cos(\phi))^2 + (A \sin(\phi))^2 = A^2 (\cos^2(\phi) + \sin^2(\phi)) = A^2$
-    \end{minipage}\\
+    \raggedright
+    I think the question isn’t really wrong since it’s trying to get us to express a function in a certain way. But introducing \( \omega \) without clear context makes things confusing. Just because a variable is there doesn’t mean it’s actually important. For example, trying to express \(\sin a\) in terms of \(\sin(p + a)\) seems pointless if \(a\) is just zero.\\[1em]
     
-    \vspace{1em}
-    To find the phase shift \(\phi\), we use $\tan \phi = \frac{b}{a}$\\[1em]
-    \begin{minipage}{0.45\textwidth}\centering
-        This comes from the definitions of sine and cosine:
-        \[\tan \phi = \frac{A \sin(\phi)}{A \cos(\phi)} = \frac{b}{a}\]
-    \end{minipage}\\
-    \vspace{1em}
-    In so we derive and make use of:
-    \[A \cos(t - \phi) = a \cos(t) + b \sin(t)\]
-    Where $A = \sqrt{a^2 + b^2}$ and $\tan \phi = \frac{b}{a}$\\
-    \vspace{0.5em}\hrule\vspace{0.5em}
+    To me, it looks like \( \omega \) is just 1 because we need the frequencies to match for the equation to work. This kind of assumption might trip some people up if they don’t see it, honestly did for me a first. Honestly this might of just taken away the main aspect of this question.\\[4em]
+
+    \centering
+    \begin{minipage}{0.53\textwidth}\centering
+        Proceeding with knowing that $\omega = 1$ we start with
+        the angle subtraction formula which is:
+        \[A \cos(t - \phi) = A \cos(\phi) \cos(t) + A \sin(\phi) \sin(t)\]
+        By comparing coefficients from both sides, we have:
+        \begin{align*}
+            a & = A \cos(\phi) \\
+            b & = A \sin(\phi)
+        \end{align*}
+        To find $A$ we use $A = \sqrt{a^2 + b^2}$\\
+        \begin{minipage}{1\textwidth}\centering
+            This arises from squaring both equations \(a = A \cos(\phi)\) and \(b = A \sin(\phi)\):\\[1em]
+            $a^2 + b^2 = (A \cos(\phi))^2 + (A \sin(\phi))^2 = A^2 (\cos^2(\phi) + \sin^2(\phi)) = A^2$
+        \end{minipage}\\
+        
+        \vspace{1em}
+        To find the phase shift \(\phi\), we use $\tan \phi = \frac{b}{a}$\\
+        \begin{minipage}{1\textwidth}\centering
+            This comes from the definitions of sine and cosine:
+            \[\tan \phi = \frac{A \sin(\phi)}{A \cos(\phi)} = \frac{b}{a}\]
+        \end{minipage}\\
+        \vspace{1em}
+        In so we derive and make use of:
+        \[A \cos(t - \phi) = a \cos(t) + b \sin(t)\]
+        Where $A = \sqrt{a^2 + b^2}$ and $\tan \phi = \frac{b}{a}$
+    \end{minipage}\hfil
+    \begin{minipage}{0.4\textwidth}\centering 
     for $b=-8$ and $a=2$
     \[A = \sqrt{1^2 + (-8)^2} = \sqrt{65}\]
     \[\tan \phi = \frac{-8}{1}=-8 \qquad \phi = \arctan(-8) \approx -82.87^\circ\]\\[6pt]
@@ -249,7 +259,12 @@
     &= \sqrt{65} \cos(t - (-82.87^\circ))   
     \end{align*}
     \[\boxed{\cos t-8 \sin t \approx  8.06 \cos(t + 82.87^\circ)}\]
-    
+    Were
+    \[A = \sqrt{65} \approx 8.06\]
+    \[\alpha = -\arctan(-8) \approx 82.87^\circ\]
+    \[\omega = 1\]    
+    \href{https://www.desmos.com/calculator/mlmdfkdmsq}{\textcolor{blue}{Desmos Representaion}}
+    \end{minipage}
     \newpage
     \begin{tcolorbox}[title=\color{black}{\section{Q5}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
         Solve the following system of three linear equations using Cramer's rule
@@ -278,7 +293,7 @@
     \[v_1 = \frac{\det(A_1)}{\det(A)}, \quad v_2 = \frac{\det(A_2)}{\det(A)}, \quad v_3 = \frac{\det(A_3)}{\det(A)}\]
     \[\boxed{\begin{array}{rcl}v_1=\frac{187.6}{67}=2.8\\[6pt]v_2=\frac{40.2}{67}=0.6\\[6pt]v_3=\frac{80.4}{67}=1.2\end{array}}\]
     There are a few ways to calculate the determinants, but especially in this working out i chose not show the method i used since it’s not the main focus of the question.\\[6pt]
-    If you’re curious about how I did it, the Sarrus method for simplicity.
+    If you’re curious about how I did it, the Sarrus method for simplicity, Laplace would have also sufficed.
     \newpage    
     \begin{tcolorbox}[title=\color{black}{\section{Q6}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
         Transpose \( z = d + a \sqrt{y} \) to make \( y \) the subject.
@@ -429,7 +444,6 @@
     Write a universal, user-friendly code, test your programme and determine $L_{ABC}$ if $a=11$ cm and $b=9$ cm.
     \end{tcolorbox}
   
-    
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q1.m}{matlab scripts/q1.m}}}}]{matlab scripts/q1.m}
     \includegraphics[width=1\textwidth]{images/q1final.png}
     \newpage
@@ -470,7 +484,7 @@
     This is our final parabola equation in terms of $a$ and $b$.\\
     The approximation arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ is given by:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2 + 16a^2} + \frac{b^2}{8a}\ln\left(\frac{4a + \sqrt{b^2 + 16a^2}}{b}\right)\]
-    Side note: $L_{ABC}$ is kinda close to evaluating the integral $\int \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx$. When implementing this in a program:
+    Side note: $L_{ABC}$ is kinda close to evaluating the integral $\int \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx$.\\ When implementing this in a program:
     \begin{itemize}[itemsep=-0.1cm]
         \item Ensure that when there are no limit parameters for the inputs \(a\) and \(b\), the conditions \(a > 0\) and \(b \neq 0\) are appropriately handled.
         \item Update the plot of \(y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\) so that the sliders for \(a\) and \(b\) directly control the height and width, respectively.
@@ -492,15 +506,11 @@
     \hrule
     \vspace{3em}
     \href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{\textcolor{\link}{\textbf{py scripts/q1\_advanced.py}}}
-    
     \includegraphics[width=1\textwidth]{images/Figure_1.png}\\
-    
-    
     %\lstinputlisting[style=mypythonstyle,
-    %title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
+    %title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/py %scripts/q1_advanced.py}{py scripts/q1\_advanced.py}}}}]{py scripts/q1_advanced.py}
 
     
-
    \newpage
    \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is:
@@ -539,30 +549,25 @@
     
     \end{tcolorbox}
 
-    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2\_.m}}}}]{matlab scripts/q2.m}
-    \includegraphics[width=0.9\textwidth]{images/q2.png}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2.m}{matlab scripts/q2.m}}}}]{matlab scripts/q2.m}
+    \includegraphics[width=0.9\textwidth]{images/q2f.png}
     \newpage
     
-    \includepdf[pages={1}]{wokes.drawio.pdf}
     
     \newpage
     \subsection{Somewhat Advanced Version}
-    I say "somewhat" because this isn't all that advanced. One way to improve this project is by incorporate real-time elements, such as allowing users to adjust the resistors while the voltage is still flowing, making it interactive.
-    
-    you could even create an animation that demonstrates how the voltage changes over time, perhaps using Manim. Ultimately, it’s all about how creative you want to be with this.\\[1em]
-    
-    For now, I have developed a nice UI interface in MATLAB, which should suffice. If I have enough time and motivation, I may revisit this and create the animation.\\
+    I say "somewhat" because this isn't all that advanced. One way to improve this project is by incorporate real-time elements, such as allowing users to adjust the resistors while the voltage is still flowing, making it interactive. Ultimately, it’s all about how creative you want to be with this.\\[1em]
+    For now, I have developed a nice UI interface in MATLAB, which should suffice. If I have enough time and motivation, I may revisit this and create some animations.\\
     \vspace{1em}
     \href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q2_advanced.m}{\textcolor{\link}{\textbf{matlab scripts/q2\_advanced.m}}}\\[1em]
     
     \begin{center}
-        \includegraphics[width=0.9\textwidth]{images/realwheat.png}
+        \includegraphics[width=0.9\textwidth]{images/q2a.png}
     \end{center}
-    please don't take about wrapping i will fix if u care that much.
+
 
     
     \newpage
-    \def\ni{blue!20!white}
     \begin{tcolorbox}[title={\color{black}{\section{Q3}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         \centering
         Newton's law of cooling gives the temperature \( T(t) \) of an object at time \( t \) in terms of \( T_0 \), its temperature at \( t = 0 \), and \( T_s \), the temperature of the surroundings:
@@ -573,46 +578,424 @@
         Determine the time of death, assuming that the victim's body temperature was normal (\( 36.6^\circ C \)) prior to death, and that the room temperature was constant at \( 20.5^\circ C \).
     \end{tcolorbox}
     
-    To solve this problem, i need to fully understand it first before actually importing computing aspects. First i will use the formula given along with the given information to find the time of death.\\[6pt] Let's break it down step by step:\\[1em]
+    To solve this problem, I need to fully understand it first before actually importing computing aspects. First, I will use the formula given along with the given information to find the time of death.\\[4pt]
+    Let's break it down step by step:\\[1em]
+    \raggedright
+    \begin{minipage}{0.55\textwidth}
+        \begin{enumerate}[itemsep=-0.1cm]
+            \item \textbf{Finding the cooling constant \( k \)}:
+            \begin{itemize}
+                \item At 9:18 PM (\( t = 0 \)): \( T_0 = 26.4^\circ C \)
+                \item At 10:18 PM (\( t = 1 \) hour): \( T(1) = 25.5^\circ C \)
+                \item Room temperature (\( T_s \)) = \( 20.5^\circ C \)
+            \end{itemize}
+        \end{enumerate}
+        \centering
+        Using the equation:
+        \[ T(t) = T_s + (T_0 - T_s)e^{-kt} \]
+        Rearrange for \( k \):
+        \[ k = -\frac{1}{t} \ln\left(\frac{T(t) - T_s}{T_0 - T_s}\right) \]
+        Plugging in the values:
+        \[ k = -\frac{1}{1} \ln\left(\frac{25.5 - 20.5}{26.4 - 20.5}\right) \approx 0.1656 \]
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        2. \textbf{Finding the time when \( T_0 = 36.6^\circ C \)}:\\
+        Now that we have \( k \), we can use the original equation to find \( t \), rearrange the equation for \( t \):
+        \[ t = -\frac{1}{k} \ln\left(\frac{T(t) - T_s}{T_0 - T_s}\right) \]
+        Plugging in values and solving for \( t \):
+        \[ t = -\frac{1}{0.1656} \ln\left(\frac{25.5 - 20.5}{36.6 - 20.5}\right) \approx 7.06513 \]
+    \end{minipage}\\
+    \vspace{1em}
+    3. \textbf{Calculating the time of death}:\\
+    This means the body had been cooling for about \( 7.07 \) hours when the officer arrived at \( 9:18 \) PM. Converting decimal hours into hours and minutes:
+    \[ 7 \text{ hr} + 0.07 \times 60 \text{ min} = 7 \text{ hr} + 4.2 \text{ min} \approx 7 \text{ hr} + 4 \text{ min} \]
+    To find the time of death, we subtract \( 7 \text{ hr} \) and \( 4 \text{ min} \) from \( 9:18 \) PM:
+    \[ 9:18 \text{ PM} - 7 \text{ hr} 4 \text{ min} \approx 2:14 \text{ PM} \]
+    Therefore, the estimated time of death is around \textbf{2:14 PM} on the same day.\\[1em]
+    \newpage
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q3.m}{matlab scripts/q3.m}}}}]{matlab scripts/q3.m}
+    \newpage
+    \begin{tcolorbox}[title={\color{black}{\section{Q4}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
+        \centering
+        The volume of the parallelepiped shown can be calculated by \( \vec{r}_{OB} \cdot (\vec{r}_{OA} \times \vec{r}_{AC}) \).\\
+         Use the following steps in a script file to calculate the area:
+         \begin{enumerate}[itemsep=-0.1cm]
+             \item Define the vectors \( \vec{r}_{OA} \), \( \vec{r}_{OB} \), and \( \vec{r}_{AC} \) from inputted positions of points \( A \), \( B \), and \( C \).
+             \item Determine the volume by using MATLAB's built-in functions \texttt{dot} and \texttt{cross}.
+         \end{enumerate}
+        \tdplotsetmaincoords{70}{110}
+        \tdplotsetrotatedcoords{10}{-10}{0}
+        \begin{tikzpicture}[tdplot_main_coords, tdplot_rotated_coords, scale=0.5]
+            \draw[thick,->] (-9,0,0) -- (15,0,0) node[anchor=north east]{$\bm{x}$};
+            \draw[thick,->] (0,-3,0) -- (0,10,0) node[anchor=north west]{$\bm{y}$};
+            \draw[thick,->] (0,0,-3) -- (0,0,9) node[anchor=south]{$\bm{z}$};
+            \coordinate (O) at (0,0,0);
+            \coordinate (A) at (2,5,1);
+            \coordinate (B) at (1,3,6);
+            \coordinate (C) at (-6,8,2);
+            \coordinate (D) at (3,8,7);
+            \coordinate (E) at (-8,3,1);
+            \coordinate (F) at (-7,6,7);
+            \coordinate (G) at (-5,11,8);
+            \fill[gray!30, opacity=0.8] (O) -- (A) -- (D) -- (B) -- cycle;
+            \fill[gray!30, opacity=0.8] (A) -- (C) -- (G) -- (D) -- cycle;
+            \fill[gray!30, opacity=0.8] (B) -- (D) -- (G) -- (F) -- cycle;
+            \draw[thick,line width=0.03cm] (O) -- (A) -- (D) -- (B) -- cycle;
+            \draw[thick,line width=0.03cm] (A) -- (C) -- (G) -- (D) -- cycle;
+            \draw[thick,line width=0.03cm] (B) -- (D) -- (G) -- (F) -- cycle;
+            \draw[thick, dashed, dash pattern=on 10pt off 2pt,opacity=0.4] (O) -- (E);
+            \draw[thick, dashed, dash pattern=on 10pt off 2pt,opacity=0.4] (E) -- (C);
+            \draw[thick, dashed, dash pattern=on 10pt off 2pt,opacity=0.4] (E) -- (F);
+            \draw[thick, -{latex[scale=2]}, line width=0.07cm] (A) -- (C) node[midway,below=0.2cm,right=0.1cm] {$\bm{\vec{r}}_{AC}$};
+            \draw[thick, -{latex[scale=2]}, line width=0.07cm] (O) -- (A) node[midway,below] {$\bm{\vec{r}}_{OA}$};
+            \draw[thick, -{latex[scale=2]}, line width=0.07cm] (O) -- (B) node[midway,above left=-0.2cm] {$\bm{\vec{r}}_{OB}$};
+            \node at (O) [above left] {$O$};
+            \node at (A) [below=0.2cm, right] {$A(2,5,1)$};
+            \node at (B) [above=0.3cm,left=-0.5cm] {$B(1,3,6)$};
+            \node at (C) [below=0.2cm, right] {$C(-6,8,2)$};
+            \filldraw[white] (O) circle (3pt);
+            \filldraw[red] (A) circle (3pt);
+            \filldraw[red] (C) circle (3pt);
+            \filldraw[red] (B) circle (3pt);
+        \end{tikzpicture}
+    \end{tcolorbox}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q4.m}{matlab scripts/q4.m}}}}]{matlab scripts/q4.m}
+    \newpage
+    \begin{tcolorbox}[title={\color{black}{\section{Q5}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
+        \centering
+        The position as a function of time \( (x(t), y(t)) \) of a projectile fired with an initial speed \( v_0 \) at an angle \( \alpha \) is given by:
+        \[x(t) = v_0 \cos \alpha \cdot t \qquad y(t) = v_0 \sin \alpha \cdot t - \frac{1}{2} g t^2\]
+        where \( g = 9.81 \, \text{m/s}^2 \) is the acceleration due to gravity.\\
+        The polar coordinates of the projectile at time \( t \) are \( (r(t), \theta(t)) \), where
+        \[r(t) = \sqrt{x(t)^2 + y(t)^2} \qquad \tan \theta(t) = \frac{y(t)}{x(t)}\]
+        Write a universal, user-friendly code. Test case: $v_0 = 162$ m/sec and $\alpha = 70^\circ$.\\ Determine $r(t)$ and \(\theta(t)\) for $t = 1, 6, \ldots, 31$ sec.\\
+        
+            \begin{tikzpicture}[scale=2,transform shape,line width=0.027cm]
+            \def\a{2} %main parameter
+            \pgfmathsetmacro{\asqrt}{sqrt(\a)}
+            
+            \fill[bottom color=white, top color=gray] 
+            (-\asqrt-0.2, 0) rectangle (\asqrt + 0.3, -0.15);
+            
+            
+            \begin{scope}
+                \clip (\asqrt+0.1, 0) rectangle (-\asqrt-0.1, \a+0.1);
+                \draw[domain=-\asqrt:\asqrt, samples=100, smooth,dashed] plot (\x, {-(\x)^2 + \a});
+            \end{scope}
+            
+            \draw[-latex] (-\asqrt-0.2, 0) -- (\asqrt+0.5, 0) node[above=-1.6] {\tiny${x}$};
+            \draw[-latex] (-\asqrt, 0) -- (-\asqrt, \a+0.5) node[left=-0.1cm] {\tiny${y}$};
+            \draw[-latex] (-\asqrt, 0) -- (-\asqrt+0.3, 1) node[left=0.1cm,above=-0.12cm] {\tiny$u$};
+            
+            \draw[fill=gray!50!white] (0.48, \a-0.225) circle (1pt);
+            \draw[fill=gray!50!white] (-\asqrt,0) circle (1pt);
+            \draw[-latex] (-1.4142, 0) -- (0.49, 1.787); 
+            \node[above] at (-0.4571,0.9) {\tiny$r$};   
+            
+            \coordinate (O) at (0, 0);
+            \coordinate (B) at (-0.4571,0.9);
+            \coordinate (A) at (-1.4142, 0);    
+            \coordinate (C) at (-1.3, 0.35);
+            \coordinate (D) at (-1.3, 0);
+            
+            \pic [draw, -latex, "\tiny$\theta$", angle eccentricity=1.1,angle radius=1.4cm] {angle = O--A--B};
+            \pic [draw, -, "\tiny$\alpha$", angle eccentricity=1.2] {angle = D--A--C};    
+        \end{tikzpicture}    
+        
+    \end{tcolorbox}
+    \centering
+   
+    
+    \renewcommand{\arraystretch}{1.5}
+        
+        % Table for Motion Parameters
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
+                \hline
+                Parameter & $x$ & $y$ \\ \hline
+                Acceleration / $a$ & $a_x = 0$ & $a_y = g = 9.81 \, \text{m/s}^2$ \\ \hline
+                Initial Velocity / $u$ / $v(0)$ & $u_x = u \cos(\theta)$ & $u_y = u \sin(\theta)$ \\ \hline
+                Velocity / $v(t)$ & $v_x(t) = u_x$ & $v_y(t) = u_y - gt$ \\ \hline
+                Displacement / $s(t)$ & $s_x(t) =  u_x t$ & $s_y(t) = u_y t - \frac{1}{2}gt^2 + h$ \\ \hline
+                Velocity at Separation / $v(T)$ & $v_x(T) = u_x$ & $v_y(T) = \sqrt{u_y^2 + 2gh}$ \\ \hline
+            \end{tabular}
+            \caption{Typical Projectile Motion stuff}
+            \label{tab:motion_parameters}
+        \end{table}
+       
+       \begin{table}[H]
+           \centering
+           \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}\hline
+                Time of Flight / $T$ & $\frac{1}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ \\ \hline
+                Range / $R$ / $s_x(T)$ & $\frac{u_x}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ \\ \hline
+                Maximum Height / $H$ & $\frac{1}{2g}\left(u_y^2\right) + h$ \\ \hline
+           \end{tabular}
+           \caption{Other Derivations}
+           \label{tab:derivations}
+       \end{table}
+       
+        % Table for Circular Motion Parameters
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
+                \hline
+                Radial Position / $r(t)$ & $\sqrt{(s_x(t))^2 + (s_y(t))^2}$ \\ \hline
+                Angular Position / $\theta(t)$ & $\tan^{-1}\left(\frac{s_y(t)}{s_x(t)}\right)$ \\ \hline
+                Angular Velocity / $\omega(t)$ & $\frac{d}{dt}(\theta(t))$ \\ \hline
+                Angular Acceleration / $\alpha(t)$ & $\frac{d}{dt}(\omega(t))$ \\ \hline
+            \end{tabular}
+            \caption{Circular Motion Parameters}
+            \label{tab:circular_motion}
+        \end{table}
+       
+        
+        % Table for Non-Drag Energy Components
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
+                \hline
+                Energy Component & $x$ & $y$ \\ \hline
+                Kinetic Energy (KE) & $\frac{1}{2}m u_x^2$ & $\frac{1}{2}m u_y^2$ \\ \hline
+                Potential Energy (PE) & 0 & $mgh$ \\ \hline
+                Total Energy (TE) & $\frac{1}{2}m u_x^2$ & $\frac{1}{2}m u_y^2 + mgh$ \\ \hline
+                Lagrangian / $\mathscr{L}$ & $\frac{1}{2}m u_x^2$ & $\frac{1}{2}m u_y^2 - mgh$ \\ \hline
+                Power (P) & $m a_x u_x = 0$ & $m a_y u_y = m g u_y$ \\ \hline
+                Work Done (W) & 0 & $mgh$ \\ \hline
+            \end{tabular}
+            \caption{Typical Energy Components in Projectile Motion (Non-Drag)}
+            \label{tab:non_drag_energy}
+        \end{table}
+        
+        \vspace{1em}
+        
+        % Table for Drag Energy Components
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.27\textwidth}|>{\centering\arraybackslash}p{0.27\textwidth}|}
+                \hline
+                Energy Component & $x$ & $y$ \\ \hline
+                Drag Force / $F_d$ & $F_{d_x} = \frac{1}{2} \rho C_d A v_x^2$ & $F_{d_y} = \frac{1}{2} \rho C_d A v_y^2$ \\ \hline
+                Energy Loss due to Drag / $E_d$ & $\int F_{d_x} \, dx$ & $\int F_{d_y} \, dy$ \\ \hline
+                Total Energy with Drag / $TE_d$ & $\frac{1}{2}m u_x^2 - \int F_{d_x} \, dx$ & $\frac{1}{2}m u_y^2 + mgh - \int F_{d_y} \, dy$ \\ \hline
+                Total Lagrangian with Drag / $\mathscr{L}_d$ & $\frac{1}{2}m u_x^2 - \int F_{d_x} \, dx$ & $\frac{1}{2}m u_y^2 - mgh - \int F_{d_y} \, dy$ \\ \hline
+            \end{tabular}
+            \caption{Energy Components with Drag in Projectile Motion}
+            \label{tab:drag_energy}
+        \end{table}
+  
+  
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q5.m}{matlab scripts/q5.m}}}}]{matlab scripts/q5.m}
+    \newpage
+    \begin{tcolorbox}[title={\color{black}{\section{Q6}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
+    \centering
+    The ideal gas equation states that
+    \[P = \frac{nRT}{V}\]
+    where \( P \) is the pressure, \( V \) is the volume, \( T \) is the temperature, \( R = 0.08206 \, \text{(L atm)/(mol K)} \) is the gas constant, and \( n \) is the number of moles. Real gases, especially at high pressure, deviate from this behavior. Their response can be modeled with the van der Waals equation
+    \[P = \frac{nRT}{V - nb} - \frac{n^2 a}{V^2}\]
+    where \( a \) and \( b \) are material constants. Consider 1 mole (\( n = 1 \)) of nitrogen gas at \( T = 300 \, \text{K} \). (For nitrogen gas \( a = 1.39 \, \text{(L}^2 \text{ atm)/mol}^2 \) and \( b = 0.0391 \, \text{L/mol} \).)
+    Create a vector with valu3es of \( V \) for \( 0.1 \leq V \leq 1 \, \text{L} \), using increments of \( 0.02 \, \text{L} \). Using this vector, calculate \( P \) twice for each value of \( V \): once using the ideal gas equation and once with the van der Waals equation. Using the two sets of values for \( P \), calculate the percent error
+    \[\left( \frac{P_{\text{ideal}} - P_{\text{waals}}}{P_{\text{waals}}} \right) \times 100\]
+    for each value of \( V \). Finally, by using MATLAB's built-in function \texttt{max}, determine the maximum error and the corresponding volume.
+    \end{tcolorbox}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q6.m}{matlab scripts/q6.m}}}}]{matlab scripts/q6.m}
+    
+    \newpage
+    \begin{tcolorbox}[title={\color{black}{\section{Q7}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
+         A student has a summer job as a lifeguard at the beach.\\[8pt]
+         After spotting a swimmer in trouble, they try to determine the path that will allow them to reach the swimmer in the shortest time.\\[1em] 
+         \begin{minipage}{0.45\textwidth} 
+            With the lifeguard being able to run faster than they can swim, the path of shortest distance, \textbf{Path A}, is obviously not ideal because it maximises the time spent swimming \(A_w\).\\[8pt]
+            Although \textbf{Path B} reduces the amount of time spent swimming \(B_w\), it is probably not the best option because it is the longest feasible path.\\[8pt]
+            Therefore, somewhere in between Paths A and B is the best course of action.
+         \end{minipage}
+         \begin{minipage}{0.4\textwidth}\centering
+             \begin{tikzpicture}[scale=1.5,transform shape]
+                 \definecolor{sandy}{HTML}{FFFFFF}
+                 \definecolor{sea}{HTML}{f8f8f8}
+                 \definecolor{news}{HTML}{FFFFFF}
+                 \definecolor{seas}{HTML}{f8f8f8}
+                 \fill[sandy] (-0.5, -0.5) rectangle (2.5, 3.5);
+                 \fill[sea] (2.5, -0.5) rectangle (5.5, 3.5);
+                 \draw (2.5, -0.5) -- (2.5, 3.5);
+                 \coordinate (D) at (2.5,2.25);    
+                 \coordinate (A1) at (2.5,1.5);
+                 \coordinate (B) at (5,3);    
+                 \coordinate (A) at (0,0);
+                 \coordinate (C) at (2.5,3);    
+                 \draw[fill=white] (A) circle (2pt) node[below] {\scalebox{0.9}{\sffamily\tiny Lifeguard}};
+                 \draw[fill=white] (B) circle (2pt) node[below] {\scalebox{0.9}{\sffamily\tiny Swimmer}};
+                 %A
+                 \draw[dashed,red] (A) -- (A1);
+                 \filldraw[news] (1.25,0.75) circle (0.2cm);
+                 \node at (1.25,0.75) {\tiny$A_s$};
+                 \draw[dashed,red!70!black,dash pattern=on 3pt off 1pt,opacity=0.6] (A1) -- (B);
+                 \filldraw[seas] (3.75,2.25) circle (0.2cm);
+                 \node at (3.75,2.25) {\tiny$A_w$};
+                 %B
+                 \draw[dashed,blue] (A) -- (C);
+                 \filldraw[news] (1.25,1.5) circle (0.2cm);
+                 \node at (1.25,1.5) {\tiny$B_s$};
+                 \draw[dashed,blue!70!black,dash pattern=on 3pt off 1pt,opacity=0.6] (C) -- (B);
+                 \filldraw[seas] (3.75,3) circle (0.2cm);
+                 \node at (3.75,3) {\tiny$B_w$};
+                 %C
+                 \draw[-,green] (A) -- (D);
+                 \filldraw[news] (1.25,1.125) circle (0.2cm);
+                 \node at (1.25,1.125) {\tiny$C_s$};
+                 \draw[-,green!70!black] (D) -- (B);    
+                 \filldraw[seas] (3.75,2.625) circle (0.2cm);
+                 \node at (3.75,2.625) {\tiny$C_w$};
+                 \coordinate (phi) at (1.25,2.25);
+                 \coordinate (alpha) at (3.75,2.25);
+                 \draw[-,gray!70!black,line width=0.001cm] (1.5,2.25) -- (3.5,2.25);
+                 \begin{scope}[shift={(0.2,0)}]        
+                     \draw[latex-latex,gray!70!black,line width=0.001cm] (2.5,0) -- (2.5,2.25);
+                     \filldraw[seas] (2.5,1.125) circle (0.1cm);
+                     \node at (2.5,1.125) {\tiny$y$};
+                 \end{scope}
+                 \draw[-,gray!70!black,line width=0.001cm] (1.5,0) -- (3.5,0);
+                 \coordinate (L) at (0,3);
+                 \draw[gray!70!black, latex-latex,line width=0.001cm] (A) -- (L);
+                 \filldraw[news] (0,1.5) circle (0.16cm);
+                 \node at (0,1.5) {\tiny$L$};
+                 \draw[gray!70!black, latex-latex,line width=0.001cm] (L) -- (C);
+                 \filldraw[news] (1.25,3) circle (0.16cm);
+                 \node at (1.25,3) {\tiny$d_s$};
+                 \draw[latex-latex,line width=0.001cm,gray!70!black] ([shift={(0, 0.3)}]C) -- ([shift={(0, 0.3)}]B);
+                 \filldraw[seas] (3.75,3.3) circle (0.16cm);
+                 \node at (3.75,3.3) {\tiny$d_w$};
+                 \pic [draw, -{Latex[length=0.5mm,width=0.55mm]}, "\tiny$\phi$", angle eccentricity=1.4,angle radius=0.3cm] {angle = phi--D--A};
+                 \pic [draw, -{Latex[length=0.5mm,width=0.55mm]}, "\tiny$\alpha$", angle eccentricity=1.35,angle radius=0.4cm] {angle = alpha--D--B};    
+             \end{tikzpicture}
+         \end{minipage}\\
+         
+         \vspace{0.6em}
+             
+         Consider the intermediate \textbf{path C} consisting of $C_s$ and $C_w$ and determine the time required to reach the swimmer in terms of the following:\\[1em]
+         \begin{minipage}{0.4\textwidth}
+         \begin{itemize}[itemsep=-0.1cm]
+             \item Running speed: \( v_{\text{run}} = 3 \, \text{m/s} \)
+             \item Swimming speed: \( v_{\text{swim}} = 1 \, \text{m/s} \)
+             \item Distance \( L = 48 \, \text{m} \)
+             \item Distance \( d_s = 30 \, \text{m} \)
+             \item Distance \( d_w = 42 \, \text{m} \)
+             \item Lateral distance \( y \) at which the lifeguard enters the water.
+         \end{itemize}
+        \end{minipage}\hfil
+        \begin{minipage}{0.52\textwidth}
+         Create a vector \( y \) that ranges between path A and path B (\( y = 20, 21, 22, \dots, 48 \, \text{m} \)) and compute a time \( t \) for each \( y \).\\[8pt]
+         Use MATLAB's built-in function \texttt{min} to find the minimum time and the entry point \( y \) for which it occurs.
+        \end{minipage}\\[1em]
+        
+         Determine the angles that correspond to the calculated value of \( y \) and investigate 
+         whether your result satisfies Snell's law of refraction:
+         \[\frac{\sin \phi}{\sin \alpha} = \frac{v_{\text{run}}}{v_{\text{swim}}}\]
+    \end{tcolorbox}
+    The total time \( t \) to reach the swimmer consists of two components: the time spent running along the shore and the time spent swimming to the swimmer.\\[8pt]
+    \textbf{1. Running Time} The running distance \( C_s \) in the ideal path \( C \) is determined by the vertical distance \( y \) and the horizontal distance \( d_s \). Thus, the distance the lifeguard runs to the shore is given by:
+    \[ C_s = \sqrt{y^2 + d_s^2} \]
+    Knowing the running distance \( C_s \), we can express the running time in terms of velocity and time:
+    \[ t_{\text{run}} = \frac{C_s}{v_{\text{run}}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}} \]\\[8pt]
+    \textbf{2. Swimming Time} After reaching point \( y \), the lifeguard swims directly to the swimmer. The swimming distance \( C_w \) is determined by the horizontal distance \( L - y \) and the vertical distance \( d_s \). Thus, the distance the lifeguard swims is given by:
+    \[ C_w = \sqrt{d_s^2 + (L - y)^2} \]
+    The swimming time \( t_{\text{swim}} \) is then given by:
+    \[ t_{\text{swim}} = \frac{C_w}{v_{\text{swim}}} = \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}} \]
+    As an alternative, we may correlate $C_w$ with another triangle that involves \( d_w \) the swimmer's horizontal distance from the shore\\[8pt]
+    \textbf{3. Total Time} Combining both components, the total time \( t \) required to reach the swimmer is:
+    \[ t = t_{\text{run}} + t_{\text{swim}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}} + \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}} \]
+    Substituting the known values, we have:
+    \[ t = \frac{\sqrt{y^2 + 30^2}}{3} + \frac{\sqrt{30^2 + (48 - y)^2}}{1} \]
+    \textbf{Angles for verification with Snells law}\\
+    \[\frac{\sin \phi}{\sin \alpha} = \frac{v_{\text{run}}}{v_{\text{swim}}}\]
+    were:
+    \[\phi = \arctan\left(\frac{y}{30}\right)\]
+    \[\alpha = \arctan\left(\frac{48-y}{30}\right)\]
+    Worked out through observation of triangles formed\\[8pt]
+    \textbf{Finding the Optimal Path}\\
+    To find the optimal entry point \( y \) that minimizes \( t \), we compute the time \( t \) for each possible \( y \) within the range of \( 20 \leq y \leq 48 \) m. The entry point \( y \) that yields the minimum time will be our optimal path.\\[1em]
+    To solve this problem in code, we:
+    \begin{enumerate}[itemsep=-0.1cm]
+        \item Define the running and swimming speeds, as well as distances along and perpendicular to the shore.
+        \item Use the distance \( y \) as a variable representing where the lifeguard enters the water.
+        \item Calculate the total time \( t \) required to reach the swimmer for each \( y \) value.
+        \item Use MATLAB’s \texttt{min} function to find the optimal \( y \) with minimum time.
+        \item Verify the result with Snell's law.
+    \end{enumerate}
+    
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q7.m}{matlab scripts/q7.m}}}}]{matlab scripts/q7.m}
+
+    \newpage
+    \begin{tcolorbox}[title={\color{black}{\section{Q8}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
+    In a typical tension test, a dog bone-shaped specimen is pulled in a machine. During the test, the force needed to pull the specimen and the length \( L \) of a gauge section are measured. This data is used for plotting a stress-strain diagram of the material.\\[8pt]
+    Two definitions, engineering and true, exist for stress and strain. The engineering stress \( \sigma_c \) and strain \( \varepsilon_c \) are defined by
+    \[\sigma_c = \frac{F}{A_0}, \quad \varepsilon_c = \frac{L - L_0}{L_0},\]
+    where \( L_0 \) and \( A_0 \) are the initial gauge length and the initial cross-sectional area of the specimen, respectively.\\[8pt]
+    The true stress \( \sigma_t \) and strain \( \varepsilon_t \) are defined by 
+    \[\sigma_t = \frac{F L_0}{A_0 L}, \quad \varepsilon_t = \ln\left(\frac{L}{L_0}\right).\]
+    The following are measurements of force and gauge length from a tension test with an aluminium specimen. The specimen has a round cross-section with a radius of \( 6.4 \, \text{mm} \) (before the test). The initial gauge length is \( L_0 = 25 \, \text{mm} \).\\[8pt]
+    Use the data to calculate and generate the engineering and true stress-strain curves, both on the same plot. Label the axes and use a legend to identify the curves.\\[8pt]
+    
+    \textbf{Units}: When the force is measured in newtons (N) and the area is calculated in m\(^2\), the unit of the stress is pascals (Pa).
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \text{F, N} & \text{L, mm} \\
+            \hline
+            0 & 25.400 \\
+            13.031 & 25.474 \\
+            21.485 & 25.515 \\
+            31.3963 & 25.575 \\
+            34.727 & 25.615 \\
+            37.119 & 25.693 \\
+            37.960 & 25.752 \\
+            39.550 & 25.978 \\
+            40.758 & 26.419 \\
+            40.986 & 26.502 \\
+            41.076 & 26.600 \\
+            41.255 & 26.728 \\
+            41.481 & 27.130 \\
+            41.564 & 27.441 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \end{tcolorbox}
+    
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q8.m}{matlab scripts/q8.m}}}}]{matlab scripts/q8.m}
+
+    \newpage
+    
+    \begin{tcolorbox}[title={\color{black}{\section{Q9}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
+    A railroad bumper is designed to slow down a rapidly moving railroad car. After a \(20,000 \, \text{kg}\) railroad car traveling at \(20 \, \text{m/s}\) engages the bumper, its displacement \(x\) (in meters) and velocity \(v\) (in m/s) as a function of time \(t\) (in seconds) is given by:
+    \[x(t) = 4.219(e^{-1.58t} - e^{-6.32t}) \]
+    \centering
+    and 
     
     \raggedright
-    \begin{enumerate}[itemsep=-0.1cm]
-        \item \textbf{Finding the cooling constant \( k \)}:\\
-        \begin{itemize} 
-            \item At 9:18 PM (\( t = 0 \)): \( T_0 = 26.4^\circ C \)
-            \item At 10:18 PM (\( t = 1 \) hour): \( T(1) = 25.5^\circ C \)
-            \item Room temperature (\( T_s \)) = \( 20.5^\circ C \)    
-        \end{itemize}
-    \end{enumerate}    
+    \[v(t) = 26.67 e^{-6.32t} - 6.67 e^{-1.58t}\]
+    Plot the displacement and the velocity as a function of time for \(0 \leq t \leq 4\) seconds. Fit two plots at the top of the window and a plot of both with two vertical axes underneath them. All plots must be of printing quality.
+    \end{tcolorbox}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q9.m}{matlab scripts/q9.m}}}}]{matlab scripts/q9.m}
     
-    Using the equation:
-    \[T(t) = T_s + (T_0 - T_s)e^{-kt}\]
-    Plugging in the values:
-    \[25.5 = 20.5 + (26.4 - 20.5)e^{-k \cdot 1}\]
-    This simplifies to:
-    \[5 = 5.9e^{-k}\]
-    Rearranging gives:
-    \[e^{-k} = \frac{5}{5.9}\]
-    Taking the natural logarithm:
-    \[-k = \ln\left(\frac{5}{5.9}\right)\]
-    Thus,
-    \[k \approx -\ln\left(\frac{5}{5.9}\right) \approx 0.1656 \text{ per hour}\]
-    2. \textbf{Finding the time when \( T_0 = 36.6^\circ C \)}:\\
-    Now that we have \( k \), we can use the original equation to find \( t \):
-    \[26.4 = 20.5 + (36.6 - 20.5)e^{-0.1656t}\]
-    Simplifying this:
-    \[5.9 = 16.1e^{-0.1656t}\]
-    Taking the natural logarithm gives:
-    \[e^{-0.1656t} = \frac{5.9}{16.1}\]
-    Taking the natural logarithm again:
-    \[-0.1656t = \ln\left(\frac{5.9}{16.1}\right)\]
-    Finally, solving for \( t \):
-    \[t = -\frac{\ln\left(\frac{5.9}{16.1}\right)}{0.1656} \approx 6.24 \text{ hours}\]
-    3. \textbf{Calculating the time of death}:\\
-    This means the body had been cooling for about \( 6.24 \) hours when the officer arrived at \( 9:18 \) PM.
-    To find the time of death, we subtract \( 6.24 \) hours from \( 9:18 \) PM:
-    \[9:18 \text{ PM} - 6.24 \text{ hours} \approx 3:04 \text{ PM}\]
-    Therefore, the estimated time of death is around \textbf{3:04 PM} on the same day.\\[1em]
-    \textbf{Note:} This is an estimate based on the model and assumptions given. In real forensic work, many other factors would be considered for a more accurate determination of time of death.
-
+    \newpage
+    
+    \begin{tcolorbox}[title={\color{black}{\section{Q10}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
+        Aircraft A is flying east at \( 320 \, \text{mi/hr} \), while aircraft B is flying south at \( 160 \, \text{mi/hr} \). At 1:00 p.m., the aircraft are located as shown.\\[8pt]
+        Obtain the expression for the distance \( D \) between the aircraft as a function of time \( t \). Plot \( D \) versus time until \( D \) reaches its minimum value. The plot must be of printing quality. Use the \texttt{roots} function to compute the time when the aircraft are first within \( 30 \, \text{mi} \) of each other.    
+    \end{tcolorbox}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q10.m}{matlab scripts/q10.m}}}}]{matlab scripts/q10.m}
+    
+    \newpage
+    
+    \begin{tcolorbox}[title={\color{black}{\section{Q11}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
+        A two-dimensional state of stress at a point in a loaded material in the direction defined by the \( x - y \) coordinate system is defined by three components of stress \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \). The stresses at the point in the direction defined by the \( x' - y' \) coordinate system are calculated by the stress transformation equations:
+        \[\sigma_{x' x'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} + \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) + \tau_{xy} \sin(2\theta)\]
+        \[\sigma_{y' y'}= \sigma_{xx} + \sigma_{yy} - \sigma_{x' x'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} - \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) - \tau_{xy} \sin(2\theta)\]
+        \[\tau_{x' y'} = -\frac{\sigma_{xx} - \sigma_{yy}}{2} \sin(2\theta) + \tau_{xy} \cos(2\theta)\]
+        where \( \theta \) is the angle shown in the figure.\\[8pt]
+        Write a user-defined MATLAB function that determines the stresses \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \) given the stresses \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the angle \( \theta \). For the function name and arguments, use 
+        \[[\text{Strain}] = \text{StressTrans}(S, \theta)\]
+        The input argument \( S \) is a vector with the values of the three stress components \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the input argument \( \theta \) is a scalar with the value of \( \theta \). The output argument \text{Strain} is a vector with the values of the three stress components \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \).
+   \end{tcolorbox}
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q11.m}{matlab scripts/q11.m}}}}]{matlab scripts/q11.m}
 \end{document}

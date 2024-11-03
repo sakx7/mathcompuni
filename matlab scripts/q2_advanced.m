@@ -5,7 +5,6 @@ function wheatstone_bridge_ui()
 
     imgURL = 'https://raw.githubusercontent.com/sakx7/mathcompuni/main/images/wheatstone_bridge.jpg'; 
     localImgPath = fullfile(pwd, 'wheatstone_bridge1.jpg');
-    
     if ~isfile(localImgPath)
         try
             websave(localImgPath, imgURL);
@@ -18,7 +17,6 @@ function wheatstone_bridge_ui()
     img = uiimage(fig);
     img.Position = [50, 50, 900, 700];
     img.ImageSource = localImgPath;
-    
 
     voltageField = uieditfield(fig, 'numeric', 'Position', [190, 450, 50, 30]);
     voltageLabel = uilabel(fig, 'Text', '$V$', 'Position', [voltageField.Position(1) + voltageField.Position(3), 450, 100, 30], 'Interpreter', 'latex');
@@ -71,7 +69,6 @@ function wheatstone_bridge_ui()
 
 end
 
-
 % function to calculate V_ab and display the result
 % This function updates the outputLabel directly with the result 
 % instead of returning a value, so no output argument is specified.
@@ -87,8 +84,6 @@ function calculate_V_ab(fig, voltageField, r1Field, r2Field, r3Field, r4Field, o
         return;
     end
     V_ab = V*(((R_1*R_3)-(R_2*R_4))/((R_1+R_2)*(R_3+R_4))) ;
-    msg = sprintf('$V_{ab} = (%.2f)\\left(\\frac{(%.2f)(%.2f) - (%.2f)(%.2f)}{(%.2f+%.2f)(%.2f+%.2f)}\\right)$ \n The output voltage $V_{ab}$ is: %.4f V', ...
-                  V, R_1, R_3, R_2, R_4, R_1, R_2, R_3, R_4, V_ab);
-
+    msg = sprintf('$V_{ab} = The output voltage $V_{ab}$ is: %.4f V',V_ab);
     outputLabel.Text = msg; 
 end

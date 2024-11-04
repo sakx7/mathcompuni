@@ -86,7 +86,7 @@
     frame=single,
     framesep=5pt,
     rulecolor=\color{black!30},
-    backgroundcolor=\color{yellow!10},
+    backgroundcolor=\color{white!94!gray},
     emphstyle=\color{purple}\bfseries,
     emph={[2]\%},
     emphstyle={[2]\color{green!60!black}},
@@ -203,7 +203,7 @@
     \end{tcolorbox}
         
     Differentiate \( y \) with respect to \( t \):\\[1em]
-    Note prior (q1) that the general rule for composite/nested functions is:
+    Note prior (q1) general rule for composite functions is solved via chain rule is:
     \[\frac{d}{dx}(f(g(x))) = f'(g(x))\cdot g'(x)\]
     Here for $y=\ln \left(16 t^{2}+19\right)$
     \[\frac{dy}{dt} = \frac{1}{16t^2 + 19} \cdot \frac{d}{dt}(16t^2 + 19)\]
@@ -579,7 +579,7 @@
     \end{tcolorbox}
     
     To solve this problem, I need to fully understand it first before actually importing computing aspects. First, I will use the formula given along with the given information to find the time of death.\\[4pt]
-    Let's break it down step by step:\\[1em]
+    Let's break it down step by step:\\[1.4em]
     \raggedright
     \begin{minipage}{0.55\textwidth}
         \begin{enumerate}[itemsep=-0.1cm]
@@ -605,7 +605,7 @@
         Plugging in values and solving for \( t \):
         \[ t = -\frac{1}{0.1656} \ln\left(\frac{25.5 - 20.5}{36.6 - 20.5}\right) \approx 7.06513 \]
     \end{minipage}\\
-    \vspace{1em}
+    \vspace{2em}
     3. \textbf{Calculating the time of death}:\\
     This means the body had been cooling for about \( 7.07 \) hours when the officer arrived at \( 9:18 \) PM. Converting decimal hours into hours and minutes:
     \[ 7 \text{ hr} + 0.07 \times 60 \text{ min} = 7 \text{ hr} + 4.2 \text{ min} \approx 7 \text{ hr} + 4 \text{ min} \]
@@ -614,6 +614,11 @@
     Therefore, the estimated time of death is around \textbf{2:14 PM} on the same day.\\[1em]
     \newpage
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q3.m}{matlab scripts/q3.m}}}}]{matlab scripts/q3.m}
+    \centering
+    \vspace{1em}
+    
+    \includegraphics[width=0.7\textwidth]{images/q3.png}
+    
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q4}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         \centering
@@ -660,6 +665,12 @@
         \end{tikzpicture}
     \end{tcolorbox}
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q4.m}{matlab scripts/q4.m}}}}]{matlab scripts/q4.m}
+    
+    \vspace{1em}
+    \centering
+    
+    \includegraphics[width=0.6\textwidth]{images/q4.png}
+    
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q5}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         \centering
@@ -783,9 +794,12 @@
             \caption{Energy Components with Drag in Projectile Motion}
             \label{tab:drag_energy}
         \end{table}
-  
-  
+    Im not gonna implement all of these just some
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q5.m}{matlab scripts/q5.m}}}}]{matlab scripts/q5.m}
+
+    \includegraphics[width=1\textwidth]{images/Projectile_motion.png}
+    \includegraphics[width=0.8\textwidth]{images/q5.png}
+    
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q6}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
     \centering
@@ -799,6 +813,9 @@
     for each value of \( V \). Finally, by using MATLAB's built-in function \texttt{max}, determine the maximum error and the corresponding volume.
     \end{tcolorbox}
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q6.m}{matlab scripts/q6.m}}}}]{matlab scripts/q6.m}
+    
+    \includegraphics[width=1\textwidth]{images/pressurevolume.png}
+    \includegraphics[width=0.6\textwidth]{images/q6.png}
     
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q7}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
@@ -906,13 +923,13 @@
     \[ t = t_{\text{run}} + t_{\text{swim}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}} + \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}} \]
     Substituting the known values, we have:
     \[ t = \frac{\sqrt{y^2 + 30^2}}{3} + \frac{\sqrt{30^2 + (48 - y)^2}}{1} \]
-    \textbf{Angles for verification with Snells law}\\
+    \textbf{Angles for verification with Snells law}
     \[\frac{\sin \phi}{\sin \alpha} = \frac{v_{\text{run}}}{v_{\text{swim}}}\]
     were:
-    \[\phi = \arctan\left(\frac{y}{30}\right)\]
-    \[\alpha = \arctan\left(\frac{48-y}{30}\right)\]
-    Worked out through observation of triangles formed\\[8pt]
-    \textbf{Finding the Optimal Path}\\
+    \[\phi = \arctan\left(\frac{y}{d_s}\right) = \arctan\left(\frac{y}{30}\right)\]
+    \[\alpha = \arctan\left(\frac{L-y}{d_s}\right) = \arctan\left(\frac{48-y}{30}\right)\]
+    Worked out through observation of triangles formed\\[1em]
+    \textbf{Finding the Optimal Path}\\[8pt]
     To find the optimal entry point \( y \) that minimizes \( t \), we compute the time \( t \) for each possible \( y \) within the range of \( 20 \leq y \leq 48 \) m. The entry point \( y \) that yields the minimum time will be our optimal path.\\[1em]
     To solve this problem in code, we:
     \begin{enumerate}[itemsep=-0.1cm]
@@ -924,19 +941,28 @@
     \end{enumerate}
     
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q7.m}{matlab scripts/q7.m}}}}]{matlab scripts/q7.m}
+    \includegraphics[width=0.5\textwidth]{images/q7.png}
 
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q8}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
     In a typical tension test, a dog bone-shaped specimen is pulled in a machine. During the test, the force needed to pull the specimen and the length \( L \) of a gauge section are measured. This data is used for plotting a stress-strain diagram of the material.\\[8pt]
-    Two definitions, engineering and true, exist for stress and strain. The engineering stress \( \sigma_c \) and strain \( \varepsilon_c \) are defined by
-    \[\sigma_c = \frac{F}{A_0}, \quad \varepsilon_c = \frac{L - L_0}{L_0},\]
+    Two definitions, engineering and true, exist for stress and strain.\\
+    The engineering stress \( \sigma_c \) and strain \( \varepsilon_c \) are defined by:\\[0em]
+    \[\sigma_c = \frac{F}{A_0} \qquad \varepsilon_c = \frac{L - L_0}{L_0}\]\\[0em]
     where \( L_0 \) and \( A_0 \) are the initial gauge length and the initial cross-sectional area of the specimen, respectively.\\[8pt]
-    The true stress \( \sigma_t \) and strain \( \varepsilon_t \) are defined by 
-    \[\sigma_t = \frac{F L_0}{A_0 L}, \quad \varepsilon_t = \ln\left(\frac{L}{L_0}\right).\]
-    The following are measurements of force and gauge length from a tension test with an aluminium specimen. The specimen has a round cross-section with a radius of \( 6.4 \, \text{mm} \) (before the test). The initial gauge length is \( L_0 = 25 \, \text{mm} \).\\[8pt]
-    Use the data to calculate and generate the engineering and true stress-strain curves, both on the same plot. Label the axes and use a legend to identify the curves.\\[8pt]
+    The true stress \( \sigma_t \) and strain \( \varepsilon_t \) are defined by\\[1em]
+    \[\hspace{-8em} \sigma_t = \frac{F L_0}{A_0 L} \qquad \varepsilon_t = \ln\left(\frac{L}{L_0}\right)\]\\
     
-    \textbf{Units}: When the force is measured in newtons (N) and the area is calculated in m\(^2\), the unit of the stress is pascals (Pa).
+    \centering
+    \begin{minipage}{0.7\textwidth}    \vspace{-2em}
+        The following are measurements of force and gauge length from a tension test with an aluminium specimen.\\[1em]
+        The specimen has a round cross-section with a radius of \( 6.4 \, \text{mm} \) (before the test). \\[1em]
+        The initial gauge length is \( L_0 = 25 \, \text{mm} \).\\[1em]
+        Use the data to calculate and generate the engineering and true stress-strain curves, both on the same plot.\\[1em]
+        Label the axes and use a legend to identify the curves.\\[1em]
+        \textbf{Units}: When the force is measured in newtons (N) and the area is calculated in m\(^2\), the unit of the stress is pascals (Pa).
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}\vspace{-9em}
     \begin{center}
         \begin{tabular}{|c|c|}
             \hline
@@ -959,10 +985,13 @@
             \hline
         \end{tabular}
     \end{center}
+    \end{minipage}
+    
     \end{tcolorbox}
     
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q8.m}{matlab scripts/q8.m}}}}]{matlab scripts/q8.m}
-
+    \vspace{1em}
+    \includegraphics[width=1\textwidth]{images/stressvstran.png}
     \newpage
     
     \begin{tcolorbox}[title={\color{black}{\section{Q9}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
@@ -976,21 +1005,103 @@
     Plot the displacement and the velocity as a function of time for \(0 \leq t \leq 4\) seconds. Fit two plots at the top of the window and a plot of both with two vertical axes underneath them. All plots must be of printing quality.
     \end{tcolorbox}
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q9.m}{matlab scripts/q9.m}}}}]{matlab scripts/q9.m}
+    \includegraphics[width=1\textwidth]{images/railroad_bumper_plots.png}
     
     \newpage
     
     \begin{tcolorbox}[title={\color{black}{\section{Q10}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
-        Aircraft A is flying east at \( 320 \, \text{mi/hr} \), while aircraft B is flying south at \( 160 \, \text{mi/hr} \). At 1:00 p.m., the aircraft are located as shown.\\[8pt]
-        Obtain the expression for the distance \( D \) between the aircraft as a function of time \( t \). Plot \( D \) versus time until \( D \) reaches its minimum value. The plot must be of printing quality. Use the \texttt{roots} function to compute the time when the aircraft are first within \( 30 \, \text{mi} \) of each other.    
+        Aircraft A is flying east at \( 320 \, \text{mi/hr} \), while aircraft B is flying south at \( 160 \, \text{mi/hr} \).\\
+        \centering
+        
+        At 1:00 p.m., the aircraft are located as shown.\\[15pt]
+        
+        
+        \begin{tikzpicture}
+            \draw[-] (0,0) -- (10,0);
+            \draw[-] (8,3) -- (8,-3);
+            \filldraw (1,0) circle (2pt) node[above=0.1cm] {A};
+            \draw[line width = 0.4mm,-{Latex[length=2mm,width=2mm]}] (1,0) -- (2.4,0) node[above] {320 mi/h};
+            \draw[-] (1,-0.3) -- (1,-1.7);
+            \draw[{Stealth[length=2.5mm]}-{Stealth[length=2.5mm]}] (1,-1) -- (8,-1)  node[below, midway] {800 mi};
+            \filldraw (8,2.2) circle (2pt) node[left=0.05cm] {B};
+            \draw[line width = 0.4mm,-{Latex[length=2mm,width=2mm]}] (8,2.2) -- (8,1.4) node[above=0.1cm, left=0.1cm] {160 mi/h};
+            \draw[-] (8.3,2.2) -- (9.7,2.2); 
+            \draw[{Stealth[length=2.5mm]}-{Stealth[length=2.5mm]}] (9,2.2) -- (9,0) node[midway, right] {410 mi};
+        \end{tikzpicture}\\[8pt]
+        \raggedright
+        \begin{itemize}[itemsep=-0.1cm]
+            \item Obtain the expression for the distance \( D \) between the aircraft as a function of time \( t \).
+            \item Plot \( D \) versus time until \( D \) reaches its minimum value.
+            \item The plot must be of printing quality.
+            \item Use the \texttt{roots} function to compute the time when the aircraft are first within \( 30 \, \text{mi} \) of each other.    
+        \end{itemize}
     \end{tcolorbox}
+    
+    \textbf{Step 1: Setting Up the Position Coordinates}\\[1em]
+    At 1:00 p.m., the initial positions of the two aircraft are as follows:\\
+     Aircraft A is located 800 miles west of the vertical line where Aircraft B is positioned, and Aircraft B is 410 miles north of the horizontal line where Aircraft A is located.\\[1em]
+    We assume that Aircraft A is flying east at a speed of \( 320 \, \text{mi/hr} \), while Aircraft B is moving south at \( 160 \, \text{mi/hr} \).\\[1em]
+    Let \( t = 0 \) represent 1:00 p.m., the starting time. We denote the eastward position of Aircraft A at time \( t \) as \( x_A(t) \), and the southward position of Aircraft B at time \( y_B(t) \).\\[1em]
+    
+    \textbf{Step 2: Expressing Positions as Functions of Time}\\[1em]    
+    
+    \begin{minipage}{0.45\textwidth}\centering
+        \textbf{Aircraft A's Position:} Since \textbf{Aircraft A} is moving eastward at \( 320 \, \text{mi/hr} \), given $(d=vt)$ its position \( x_A(t) \) relative to its starting point can be expressed as:
+        \[x_A(t) = 320t\]
+        Thus, the total horizontal distance from \textbf{Aircraft B} after \( t \) hours is:
+        \[x(t) = 800 - x_A(t) = 800 - 320t\]
+    \end{minipage}\hfil
+    \begin{minipage}{0.45\textwidth}\centering
+        \textbf{Aircraft B's Position:} Since \textbf{Aircraft B} is moving southward at \( 160 \, \text{mi/hr} \), given $(d=vt)$ its position \( y_B(t) \) relative to its starting point can be expressed as:
+        \[y_B(t) = 160t\]
+        Thus, the total vertical distance from \textbf{Aircraft A} after \( t \) hours is:
+        \[y(t) = 410 - y_B(t) = 410 - 160t\]
+    \end{minipage}\\
+    
+    \newpage
+
+    \textbf{Step 3: Deriving the Distance \( D(t) \) Between the Aircraft}\\[1em]
+    Using the Pythagorean theorem, the distance \( D(t) \) between the aircraft is:
+    \[D(t) = \sqrt{x(t)^2 + y(t)^2}\]
+    Substituting for \( x(t) \) and \( y(t) \):
+    \[D(t) = \sqrt{(800 - 320t)^2 + (410 - 160t)^2}\]\\
+    \vspace{1em}
+    \begin{minipage}{0.45\textwidth}\centering
+        \textbf{Computing the Time When Aircraft Are Within 30 Miles}\\[1em]
+        To find when the aircraft are first within \( 30 \, \text{mi} \) of each other, set \( D(t) = 30 \) and solve for \( t \):
+        \[30 = \sqrt{(800 - 320t)^2 + (410 - 160t)^2}\]
+        Squaring both sides:
+        \[900 = (800 - 320t)^2 + (410 - 160t)^2\]
+        This equation can be simplified and solved using a computational tool such as MATLAB’s \texttt{roots} function.
+    \end{minipage}\hfil
+    \begin{minipage}{0.44\textwidth}\centering
+        \textbf{Determining the Minimum Distance}\\[1em]
+        To find the time \( t \) at which the distance \( D(t) \) reaches its minimum, we can take the derivative of \( D(t) \) with respect to \( t \), set it to zero, and solve for \( t \).\\[1em]
+        However, since this expression is not needed to differentiate manually, we can use numerical methods or computational tools to find this minimum.\\[1em]
+    \end{minipage}\\[2em]
+    
+    \textbf{Summary}
+    \begin{itemize}[itemsep=-0.1cm]
+        \item \textbf{Expression for \( D(t) \)}: The distance between the aircraft as a function of time is
+        \[D(t) = \sqrt{(800 - 320t)^2 + (410 - 160t)^2}\]
+        \item \textbf{Finding Minimum Distance}: Use MATLAB’s \texttt{min} function to find the minimum \( D(t) \) and the corresponding time \( t \).        
+        \item \textbf{Solving \( D(t) = 30 \)}: Set \( D(t) = 30 \) and use MATLAB’s \texttt{roots} function to find the time \( t \) when the aircraft are first within \( 30 \, \text{mi} \) of each other.
+    \end{itemize}
+
+    
+    
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q10.m}{matlab scripts/q10.m}}}}]{matlab scripts/q10.m}
+    
+
+    \includegraphics[width=1\textwidth]{images/aircraft_distance_plot.png}
+    \includegraphics[width=0.6\textwidth]{images/q10.png}
     
     \newpage
     
     \begin{tcolorbox}[title={\color{black}{\section{Q11}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
         A two-dimensional state of stress at a point in a loaded material in the direction defined by the \( x - y \) coordinate system is defined by three components of stress \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \). The stresses at the point in the direction defined by the \( x' - y' \) coordinate system are calculated by the stress transformation equations:
         \[\sigma_{x' x'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} + \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) + \tau_{xy} \sin(2\theta)\]
-        \[\sigma_{y' y'}= \sigma_{xx} + \sigma_{yy} - \sigma_{x' x'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} - \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) - \tau_{xy} \sin(2\theta)\]
+        \[\sigma_{y' y'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} - \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) - \tau_{xy} \sin(2\theta)\]
         \[\tau_{x' y'} = -\frac{\sigma_{xx} - \sigma_{yy}}{2} \sin(2\theta) + \tau_{xy} \cos(2\theta)\]
         where \( \theta \) is the angle shown in the figure.\\[8pt]
         Write a user-defined MATLAB function that determines the stresses \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \) given the stresses \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the angle \( \theta \). For the function name and arguments, use 

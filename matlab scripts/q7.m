@@ -1,14 +1,14 @@
 % Define the running and swimming speeds, and distances
-v_run = 3; % Running speed in m/s
-v_swim = 1; % Swimming speed in m/s
-L = 48; % Total distance along the shore in m
-d_s = 30; % Distance perpendicular to the shore in m
+v_run = 3;
+v_swim = 1;
+L = 48;
+d_s = 30;
 
 % Define the range of y values
-y_values = 0:0.0001:L; % Range of y values
+y_values = 0:0.0001:L;
 
 % Calculate the total time for each y value
-total_time = zeros(size(y_values)); % Initialize the total time array
+total_time = zeros(size(y_values));
 
 for i = 1:length(y_values)
     y = y_values(i);
@@ -24,12 +24,12 @@ end
 optimal_y = y_values(idx); % Optimal y value
 
 % Verify the result with Snell's Law
-phi = 90 - atand(d_s/optimal_y); % Angle phi in degrees
-alpha = asind((L-optimal_y)/sqrt(d_s^2+(L-optimal_y)^2)); % Angle alpha in degrees
+phi = atand(optimal_y/d_s);
+alpha = atand((L-optimal_y)/d_s);
 
 % Check Snell's Law
-snell_ratio = sind(phi) / sind(alpha);
-expected_ratio = v_run / v_swim;
+snell_ratio = sind(phi)/sind(alpha);
+expected_ratio = v_run/v_swim;
 
 fprintf('Optimal y value: %.2f m\n', optimal_y);
 fprintf('Minimum time: %.2f s\n', min_time);
@@ -39,7 +39,7 @@ fprintf('Snell ratio: %.6f\n', snell_ratio);
 fprintf('Expected ratio: %.6f\n', expected_ratio);
 
 if abs(snell_ratio-expected_ratio)<1e-4
-    disp('Snell''s Law is satisfied.');
+    disp('Snell''s Law essentially is satisfied.');
 else
     disp('Snell''s Law is not satisfied.');
 end

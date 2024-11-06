@@ -4,7 +4,7 @@
 This task is being submitted via CANVAS in PDF format only. Here's what you can expect in each part of the coursework:
 
 ### Part A
-- This part includes my worked solutions. I've chosen to submit scanned handwritten notes as they reflect my learning process.
+- This part includes my worked solutions, which I have compiled using **LaTeX**. I opted for LaTeX to ensure clean and organized mathematical expressions.
   
 ### Part B
 - This part is all about MATLAB code. I will be submitting well-commented code with relevant screenshots of the command window and graphs.

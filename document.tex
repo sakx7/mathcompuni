@@ -147,13 +147,13 @@
     \setcounter{page}{1}
     \fancyhead[L]{Part A: Mathematics}
 
-    \begin{tcolorbox}[title={\color{black}{\section{Q1}}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title={\color{black}{\section{Q1}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Use the quotient rule to differentiate the function \( y=\frac{\ln 3 x}{2 x} \)
     \end{tcolorbox}
     
     The quotient rule states that if
     \[y = \frac{u}{v} \quad \text{then} \quad y' = \frac{u'v - uv'}{v^2}\]
-    Here: \\[5pt]
+    Here, for \(y=\frac{\ln 3 x}{2 x}\): \\[5pt]
     \begin{minipage}{0.4\textwidth}
         \[u = \ln 3x\] 
     \end{minipage}\hspace{-8em}
@@ -164,13 +164,13 @@
     \begin{minipage}{0.43\textwidth}\centering
     \[u = \ln(3x)\]
     Let:
-    \[\delta = 3x \qquad u = \ln(\delta)\]
+    \[\delta = 3x \text{ in so that now } u = \ln(\delta)\]
     \[\frac{d\delta}{dx} = 3 \qquad \frac{du}{d\delta} = \frac{1}{\delta} \]
     Using the chain rule, we can find:
-    \[\frac{du}{dx} = \frac{du}{d\delta} \cdot \frac{d\delta}{dx}\]
+    \[\frac{du}{dx} = \frac{du}{d\delta} \frac{d\delta}{dx}\]
     \[\frac{du}{dx} = \frac{3}{\delta} = \frac{3}{3x}= \frac{1}{x}\]\\[1em]
-    General rule for composite functions is solved via chain rule it's:\\[-20pt]
-    \[\frac{d}{dx}(f(g(x))) = f'(g(x))\cdot g'(x)\]
+    General rule for composite functions derived via chain rule is:\\[-20pt]
+    \[\frac{d}{dx}\left[f(g(x))\right] = f'(g(x)) g'(x)\]
     \end{minipage}\hspace{1em}\vrule\hspace{-2.5em}
     \begin{minipage}{0.4\textwidth}
         \[v = 2x\]
@@ -181,7 +181,7 @@
     \[\boxed{y' = \frac{1 - \ln(3x)}{2x^2}}\]
     
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Find the angle between the vectors \( 2 i-11 j-10 k \) and \( 5 i+8 j+7 k \)
     \end{tcolorbox}
     
@@ -198,7 +198,7 @@
     \[\boxed{\theta = \cos^{-1}\left(\frac{-148}{15 \times \sqrt{138}}\right) \approx 147.1^{\circ}}\]
     
     \newpage    
-    \begin{tcolorbox}[title=\color{black}{\section{Q3}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q3}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Find the rate of change of \( y=\ln \left(16 t^{2}+19\right) \) at the specified point \( t=9 \)
     \end{tcolorbox}
         
@@ -213,13 +213,13 @@
     \[\boxed{\frac{dy}{dt} \bigg|_{t=9} = \frac{32 (9)}{16(9)^2 + 19} = \frac{288}{1315} \approx 0.219}\]
     
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q4}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q4}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Express \( \cos t-8 \sin t \) in the form \( A \cos (\omega t+\alpha) \), where \( \alpha \geq 0 \)
     \end{tcolorbox}
     \raggedright
     I think the question isn’t really wrong since it’s trying to get us to express a function in a certain way. But introducing \( \omega \) without clear context makes things confusing. Just because a variable is there doesn’t mean it’s actually important. For example, trying to express \(\sin a\) in terms of \(\sin(p + a)\) seems pointless if \(a\) is just zero.\\[1em]
     
-    To me, it looks like \( \omega \) is just 1 because we need the frequencies to match for the equation to work. This kind of assumption might trip some people up if they don’t see it, honestly did for me a first. Honestly this might of just taken away the main aspect of this question.\\[4em]
+    To me, it looks like \( \omega \) is just 1 because we need the frequencies to match for the equation to work. This kind of assumption might trip some people up if they don’t see it, honestly did for me a first. This might of just taken away the main aspect of this question.\\[4em]
 
     \centering
     \begin{minipage}{0.53\textwidth}\centering
@@ -266,7 +266,7 @@
     \href{https://www.desmos.com/calculator/mlmdfkdmsq}{\textcolor{blue}{Desmos Representaion}}
     \end{minipage}
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q5}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q5}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Solve the following system of three linear equations using Cramer's rule
         \[
         \left\{\begin{array}{c}
@@ -295,7 +295,7 @@
     There are a few ways to calculate the determinants, but especially in this working out i chose not show the method i used since it’s not the main focus of the question.\\[6pt]
     If you’re curious about how I did it, the Sarrus method for simplicity, Laplace would have also sufficed.
     \newpage    
-    \begin{tcolorbox}[title=\color{black}{\section{Q6}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q6}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Transpose \( z = d + a \sqrt{y} \) to make \( y \) the subject.
     \end{tcolorbox}
 
@@ -314,21 +314,22 @@
     \[y = \frac{d^2+z(z-2d)}{a^2}\]    
     
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q7}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
-        Find a vector that is perpendicular to both of the vectors $$ \boldsymbol{a}=4 \boldsymbol{i}+3 \boldsymbol{j}+5 \boldsymbol{k} $$$$ \boldsymbol{b}=3 \boldsymbol{i}+4 \boldsymbol{j}-6 \boldsymbol{k} $$ Hence find a unit vector that is perpendicular to both \( \boldsymbol{a} \) and \( \boldsymbol{b} \).
+    \begin{tcolorbox}[title=\color{black}{\section{Q7}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
+        Find a vector that is perpendicular to both of the vectors $$ \boldsymbol{a}=4 \mathbf{i}+3 \mathbf{j}+5 \mathbf{k} $$$$ \boldsymbol{b}=3 \mathbf{i}+4 \mathbf{j}-6 \mathbf{k} $$ Hence find a unit vector that is perpendicular to both \( \boldsymbol{a} \) and \( \boldsymbol{b} \).
     \end{tcolorbox}
-    
     The unit vector is
     \[\mathbf{\hat{r}} =\frac{\vec{r}}{||{\vec{r}}||}\]
-    Here we want to define $\vec{r}$ as a vector perpendicular to both $\mathbf{a}$ and $\mathbf{b}$, to do that we take there cross product \(\mathbf{a} \times \mathbf{b}\)
+    The vector $\vec{r}$ should be defined here as being perpendicular to both $\bm{a}$ and $\bm{b}$\\[8pt]
+    A vector perpendicular to two other vectors, $\bm{a}$ and $\bm{b}$, in three-dimensional space can be obtained by calculating the cross product of those two vectors, $\bm{a} \times \bm{b}$. This is a well-known fact in so that its practically the cross product's justification and application.\\[8pt]
+    The matrix determinant method is the fastest way to calculate cross products with vectors that are provided in Cartesian form. 
     \[\vec{r}=\mathbf{a} \times \mathbf{b} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 4 & 3 & 5 \\ 3 & 4 & -6 \end{vmatrix}= -38\mathbf{i} + 39\mathbf{j} + 7\mathbf{k}\]
     Find the magnitude:
     \[||{\vec{r}}||=\|\mathbf{a} \times \mathbf{b}\| = \sqrt{(-38)^2 + 39^2 + 7^2} = \sqrt{3014}\]
     The unit vector is:
-    \[\boxed{\frac{-38\mathbf{i} + 39\mathbf{j} + 7\mathbf{k}}{\sqrt{3014}}}\]
-
+    \[\boxed{\mathbf{\hat{r}}=\frac{-38\mathbf{i} + 39\mathbf{j} + 7\mathbf{k}}{\sqrt{3014}}\approx-0.69\mathbf{i}+0.71\mathbf{j}+0.13\mathbf{k}}\]
+   
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q8}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q8}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         If \( M=\left(\begin{array}{cc}7 & 9 \\ 1 & -2\end{array}\right) \) and \( N=\left(\begin{array}{cc}2 & 1 \\ -2 & 6\end{array}\right) \) find \( M N \) and \( N M \)
     \end{tcolorbox}
     
@@ -342,7 +343,7 @@
     \[\boxed{= \begin{bmatrix} 15 & 16 \\ -8 & -30 \end{bmatrix}}\]
     
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q9}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q9}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         If \( y=x^{4}-4 x^{3}-90 x^{2} \), find the values of \( x \) for which \( y^{\prime \prime}=0 \)
     \end{tcolorbox}
     
@@ -359,7 +360,7 @@
     \[\boxed{x = 5,\ x = -3}\]
     
     \newpage
-    \begin{tcolorbox}[title=\color{black}{\section{Q10}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]
+    \begin{tcolorbox}[title=\color{black}{\section{Q10}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
         Transpose \( b=g+t(a-3) \) to make \( a \) the subject
     \end{tcolorbox}
     
@@ -376,31 +377,12 @@
     
     \chapter{Computing}    
     \thispagestyle{empty}
-    \textbf{Basis}\\
-    Part B should include commented MATLAB code and
-    screenshots of the command window and graphs. All graph formatting must be done by code.\\
-    All programmes should have user-friendly input and formatted output.\\
-    \vspace{0.4em}
     \begin{center}
         \Large\textbf{Notes:}
     \end{center}
     \begin{itemize} 
         \item All graphs and images within the question boxes are created using TikZ PGF by yours truly. 
-        \item Code implementations are original and written primarily in MATLAB to adhere to guidelines, with some sections in Python.
-        \item To develop a robust, universal, and user-friendly code for this section, it is crucial to consider both usability and accessibility across a broad spectrum of potential users. Whether users are seasoned developers or novices, the approach taken should cater to their needs in an intuitive and efficient manner. Two primary strategies can be employed to achieve this:
-        
-        \begin{enumerate}[itemsep=-0.1cm] 
-            \item \textbf{Approach 1: Enhancing User Experience through Clear and Visual Representation of Mathematical Solutions}\ When solving complex mathematical problems using software such as MATLAB, presenting the results in a clear and visually engaging format is crucial for enhancing the user’s comprehension and interaction with the solution. Whether dealing with calculus, linear algebra, vector analysis, geometry, trigonometry, or statistical data, effective output presentation is key. The following strategies can be used to achieve this: \begin{itemize}[itemsep=-0.1cm] \item \textit{Graphical Representation of Mathematical Solutions}: Solutions involving differentiation, integration, matrix operations, or vector analysis can often be more intuitively understood when visualized. Plotting graphs of functions (e.g., derivatives, integrals), 3D surfaces, vector fields, and matrix visualizations helps users grasp complex concepts quickly. MATLAB's built-in plotting functions such as \texttt{plot}, \texttt{surf}, and \texttt{quiver} can be utilized to generate these visualizations. \item \textit{Interactive Graphical Interfaces for Mathematical Exploration}: Creating interactive UI elements, such as sliders for parameter adjustment, allows users to dynamically explore how changes in inputs affect the solution. For example, users can visualize the effects of altering coefficients in a system of differential equations or observe real-time changes in vector fields with interactive 3D plots. \item \textit{Formatted Output of Analytical Results}: For problems involving algebraic solutions (e.g., symbolic differentiation, integration, matrix factorizations), presenting the results in a neatly formatted output, using LaTeX-style expressions or equation editors, ensures clarity. MATLAB's \texttt{live scripts} and symbolic math toolbox can display these outputs in a way that is both readable and professional. \item \textit{Data Analysis and Statistical Visualization}: When evaluating statistical data, probability distributions, or regression models, it's essential to represent results in charts such as histograms, scatter plots, box plots, or pie charts. Visual tools for analyzing statistical variance, probability distributions, or hypothesis testing can make data-driven insights more accessible. 
-             \end{itemize}
-            This approach's disadvantage is that it fundamentally contradicts the second strategy and is difficult to reconcile with it.
-            \item \textbf{Approach 2: Providing an Interactive Programming Environment}\ For users more comfortable with programming, but still seeking a level of simplicity, an interactive coding environment can serve as an excellent middle ground. This environment would provide: \begin{itemize}[itemsep=-0.1cm] 
-                \item \textit{Clear and Accessible Code Snippets}: Providing well-commented, modular code blocks that users can easily adapt and integrate into their own projects encourages experimentation without requiring deep understanding of the entire system. 
-                \item \textit{Interactive Command-Line Interface (CLI)}: An interactive CLI can guide users through the execution of the code by providing prompts, options, and feedback, making it easier to follow steps and understand what each part of the code accomplishes. 
-                \item \textit{Jupyter Notebooks or Similar Tools}: Environments like Jupyter Notebooks allow users to experiment with the code interactively, running small sections, visualizing results, and receiving immediate feedback, all while maintaining clarity and structure in the workflow. 
-            \end{itemize} 
-        \end{enumerate}
-        
-        In summary, these two approaches collectively cater to both ends of the user spectrum, ensuring that the code is accessible, user-friendly, and adaptable. For each query or task, I will provide at least one refined solution, allowing flexibility for users to select the one that best meets their individual preferences and expertise.
+        \item Code implementations are original and written primarily in primarily in MATLAB to adhere to guidelines.
         \item Finally, please consider the answers as a whole. 
     \end{itemize}
     
@@ -413,7 +395,7 @@
     \newpage
     \newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.3in}
     
-   \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=white!50!black, boxrule=0.4mm, width=1\textwidth]\centering
+   \begin{tcolorbox}[title=\color{black}{\section{Q1}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]\centering
     The arc length of a segment of a parabola \(ABC\) of an ellipse with semi-minor axes \(a\) and \(b\) is given
     approximately by:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2+16a^2}+\frac{b^2}{8a}\ln\left(\frac{4a+\sqrt{b^2+16a^2}}{b}\right)\]
@@ -451,40 +433,143 @@
     
     
     \subsection{Advanced version}
+
     We are tasked with analyzing a parabola where:\\
     \vspace{1em}
     \hspace{3.8em}
     \begin{minipage}{0.6\textwidth}\centering
-    \begin{itemize}[itemsep=-0.1cm]
-        \item $a$ represents the height of the parabola
-        \item $b$ represents the width of the parabola
-    \end{itemize}
+        \begin{itemize}[itemsep=-0.1cm]
+            \item $a$ represents the height of the parabola
+            \item $b$ represents the width of the parabola
+        \end{itemize}
     \end{minipage}\\
     \vspace*{1em}
     My goal is to plot the parabola, first by formulating an equation in terms of these factors. Initially, we begin with a simple parabola in the general shape ($x^2$) similar to shown in the question. Our goal is to select a reasonable function, with variables associated with the $x$ scale and $y$ location of the parabola:    
-    \[y = -(\beta x)^2 + \gamma\]
+    \[
+    y = -(\beta x)^2 + \gamma
+    \]
     Given our problem statement:\\
     \vspace{1em}
     \hspace{3.8em}
     \begin{minipage}{0.8\textwidth}\centering
-       \begin{itemize}[itemsep=-0.1cm]
-        \item $\gamma$ represents the height, so $\gamma = a$
-        \item The width is related to the roots of the equation when $y = 0$
-    \end{itemize}
+        \begin{itemize}[itemsep=-0.1cm]
+            \item $\gamma$ represents the height, so $\gamma = a$
+            \item The width is related to the roots of the equation when $y = 0$
+        \end{itemize}
     \end{minipage}\\
     \vspace{1em}
     To find $\beta$, we solve:
-    \[0 = -(\beta x)^2 + \gamma\]
-    \[\beta = \frac{2\sqrt{\gamma}}{b}\]
+    \[
+    0 = -(\beta x)^2 + \gamma
+    \]
+    \[
+    \beta = \frac{2\sqrt{\gamma}}{b}
+    \]
     since we know $\gamma$:
-    \[\beta = \frac{2\sqrt{a}}{b}\]
+    \[
+    \beta = \frac{2\sqrt{a}}{b}
+    \]
     Note: This requires $b \neq 0$ and $\sqrt{a} \neq 0$ (i.e., $a > 0$).\\
     Substituting $\gamma$ and $\beta$ into our original equation:
-    \[\boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}\]
+    \[
+    \boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}
+    \]
     This is our final parabola equation in terms of $a$ and $b$.\\
-    The approximation arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ is given by:
+    
+    \subsection{General Formula for Arc Length}
+    In general, the arc length $L$ of a function $f(x)$ from $x_1$ to $x_2$ is given by the formula:
+    \[
+    L = \int_{x_1}^{x_2} \sqrt{1 + \left( \frac{d}{dx}(f(x)) \right)^2} \, dx
+    \]
+    For our function, we can substitute the derived equation $y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a$ into this formula and compute the arc length from $-\frac{b}{2}$ to $\frac{b}{2}$.
+    
+    \subsection{Simplification and Resulting Expression}
+    After performing the integration, we arrive at the following expression for the arc length:
+    \[
+    L = \int_{-\frac{b}{2}}^{\frac{b}{2}} \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}
+    \]
+    This is the arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ for our derived expression.
+    
+    \subsection{Comparison of the Two Expressions}
+    We now compare this arc length expression with the expression in the question for the length $L_{ABC}$:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2 + 16a^2} + \frac{b^2}{8a}\ln\left(\frac{4a + \sqrt{b^2 + 16a^2}}{b}\right)\]
-    Side note: $L_{ABC}$ is kinda close to evaluating the integral $\int \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx$.\\ When implementing this in a program:
+    \[L = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}\]
+    Both expressions aim to approximate the arc length of the parabola, they involve different methods of formulation since i didnt get the exact match of an expression. But i aim to make sure my derived expression tries to matches $L_{ABC}$.
+        
+    \subsection{matlab code}
+    The following matlab code was used to perform the numerical evaluation:
+ 
+    \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/expression.m}{matlab scripts/expression.m}}}}]{matlab scripts/expression.m}
+    
+    \newpage
+    \subsection{Numerical Evaluation}
+    Using the python we evaluated both expressions for various values of $a$ and $b$.\\
+    The results are summarized in Table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \textbf{a} & \textbf{b} & $\bm{L}$ & $\bm{L_{ABC}}$ & \textbf{Difference} \\
+            \hline
+            1 & 1 & 2.323392 & 2.323392 & 0.0 \\
+            1 & 2 & 2.957886 & 2.957886 & 0.0 \\
+            1 & 3 & 3.735939 & 3.735939 & 0.0 \\
+            1 & 4 & 4.591174 & 4.591174 & 0.0 \\
+            1 & 5 & 5.491150 & 5.491150 & 0.0 \\
+            2 & 1 & 4.204658 & 4.204658 & 0.0 \\
+            2 & 2 & 4.646784 & 4.646784 & 0.0 \\
+            2 & 3 & 5.232421 & 5.232421 & 0.0 \\
+            2 & 4 & 5.915771 & 5.915771 & 0.0 \\
+            2 & 5 & 6.668527 & 6.668527 & 0.0 \\
+            3 & 1 & 6.153288 & 6.153288 & 0.0 \\
+            3 & 2 & 6.498059 & 6.498059 & 0.0 \\
+            3 & 3 & 6.970176 & 6.970176 & 0.0 \\
+            3 & 4 & 7.536853 & 7.536853 & 0.0 \\
+            3 & 5 & 8.176498 & 8.176498 & 0.0 \\
+            4 & 1 & 8.123944 & 8.123944 & 0.0 \\
+            4 & 2 & 8.409317 & 8.409317 & 0.0 \\
+            4 & 3 & 8.807604 & 8.807604 & 0.0 \\
+            4 & 4 & 9.293568 & 9.293568 & 0.0 \\
+            4 & 5 & 9.850171 & 9.850171 & 0.0 \\
+            5 & 1 & 10.104730 & 10.104730 & 0.0 \\
+            5 & 2 & 10.349698 & 10.349698 & 0.0 \\
+            5 & 3 & 10.695939 & 10.695939 & 0.0 \\
+            5 & 4 & 11.123014 & 11.123014 & 0.0 \\
+            5 & 5 & 11.616959 & 11.616959 & 0.0 \\
+            \hline
+        \end{tabular}
+        \caption{Comparison of $L$ and $L_{ABC}$ with differences}
+    \end{table}
+        \vspace{-2em}
+        
+\subsection{Conclusion}
+\vspace{1em}
+
+\begin{minipage}{0.45\textwidth}
+    The primary objective of this analysis was to derive a function \( f(x) \) whose arc length would graphically correspond to the expression for \( L_{ABC} \) as provided in the question. Initially, the aim was to find a suitable mathematical function that, when graphed, would exhibit the same arc length as that described by \( L_{ABC} \).\\[8pt]
+    In pursuit of this goal, we began with a simple parabolic shape and formulated the equation:
+    \[y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\]
+\end{minipage}\hfil
+\begin{minipage}{0.45\textwidth}
+    where the parameters \( a \) and \( b \) represent the height and width of the parabola, respectively. This function was chosen because its general form would allow us to manipulate the height and width as required by the problem.\\[8PT]
+    To compute the arc length of this parabola, we substituted it into the general formula for arc length:
+    \[L = \int_{-\frac{b}{2}}^{\frac{b}{2}} \sqrt{1 + \left( \frac{d}{dx}\left( -\left( \frac{2\sqrt{a}}{b}x \right)^2 + a \right) \right)^2} \, dx\]
+\end{minipage}
+\newpage
+
+After performing the integration, we derived the following expression for the arc length:
+\[L = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}\]
+This derived arc length expression was then compared to the given formula for \( L_{ABC} \):
+\[L_{ABC} = \frac{1}{2} \sqrt{b^2 + 16a^2} + \frac{b^2}{8a} \ln \left( \frac{4a + \sqrt{b^2 + 16a^2}}{b} \right)\]
+Upon performing numerical evaluations for various values of \( a \) and \( b \), we observed that both arc length expressions provided identical results, with the differences being negligible. The numerical comparison confirmed that the arc length derived from our function matches the given formula for \( L_{ABC} \), thus demonstrating that the function:
+\[f(x) = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\]
+correctly models the desired parabola, and its arc length matches the expression for \( L_{ABC} \) derived from the problem statement.\\
+In conclusion, we have successfully achieved the objective of finding a function whose arc length corresponds to the given expression for \( L_{ABC} \). Through rigorous derivation and numerical verification, we have shown that both expressions for the arc length are equivalent. Therefore, we conclude that:
+\[L \equiv L_{ABC}\]
+This result not only validates the correctness of the derived function but also demonstrates that different methods of obtaining the arc length lead to the same result, confirming the equivalence of the expressions. This completes the analysis and fulfills the original goal set out in the advanced method i aimed to grasp.\\[1em]
+
+
+    When implementing this in a program:
     \begin{itemize}[itemsep=-0.1cm]
         \item Ensure that when there are no limit parameters for the inputs \(a\) and \(b\), the conditions \(a > 0\) and \(b \neq 0\) are appropriately handled.
         \item Update the plot of \(y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\) so that the sliders for \(a\) and \(b\) directly control the height and width, respectively.
@@ -492,7 +577,7 @@
     \end{itemize}
     \raggedright
     
-    For the remaining portion, it just boils down to presentation and flavour. I tried using MATLAB to do this, but it seemed really awkward and unreliable. Although its fine \texttt{.m} version still could require development, but I find that the \texttt{.py} version functions better.
+    I tried using MATLAB to do this, but it seemed really awkward and unreliable. Although its fine \texttt{.m} version still could require development, but I find that the \texttt{.py} version functions better.
 
     \newpage
     
@@ -512,7 +597,7 @@
 
     
    \newpage
-   \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=black!30!white, boxrule=0.4mm, width=1\textwidth]\centering
+   \begin{tcolorbox}[title=\color{black}{\section{Q2}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]\centering
    The voltage difference \(V_{ab}\) between points \(a\) and \(b\) in the Wheatstone bridge circuit is:
    \[V_{ab} = V \left(\frac{R_1 R_3 - R_2 R_4}{(R_1 + R_2)(R_3 + R_4)}\right)\]
    Write a universal, user-friendly program that calculates the voltage difference \(V_{ab}\).\\    
@@ -617,7 +702,7 @@
     \centering
     \vspace{1em}
     
-    \includegraphics[width=0.7\textwidth]{images/q3.png}
+    \includegraphics[width=0.8\textwidth]{images/q3.png}
     
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q4}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
@@ -715,37 +800,42 @@
         
     \end{tcolorbox}
     \centering
-   
-    
+    Here, I present my past knowledge and comprehension for the equations for projectile motion.
     \renewcommand{\arraystretch}{1.5}
         
-        % Table for Motion Parameters
-        \begin{table}[H]
-            \centering
-            \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
-                \hline
-                Parameter & $x$ & $y$ \\ \hline
-                Acceleration / $a$ & $a_x = 0$ & $a_y = g = 9.81 \, \text{m/s}^2$ \\ \hline
-                Initial Velocity / $u$ / $v(0)$ & $u_x = u \cos(\theta)$ & $u_y = u \sin(\theta)$ \\ \hline
-                Velocity / $v(t)$ & $v_x(t) = u_x$ & $v_y(t) = u_y - gt$ \\ \hline
-                Displacement / $s(t)$ & $s_x(t) =  u_x t$ & $s_y(t) = u_y t - \frac{1}{2}gt^2 + h$ \\ \hline
-                Velocity at Separation / $v(T)$ & $v_x(T) = u_x$ & $v_y(T) = \sqrt{u_y^2 + 2gh}$ \\ \hline
-            \end{tabular}
-            \caption{Typical Projectile Motion stuff}
-            \label{tab:motion_parameters}
-        \end{table}
-       
-       \begin{table}[H]
-           \centering
-           \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}\hline
-                Time of Flight / $T$ & $\frac{1}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ \\ \hline
-                Range / $R$ / $s_x(T)$ & $\frac{u_x}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ \\ \hline
-                Maximum Height / $H$ & $\frac{1}{2g}\left(u_y^2\right) + h$ \\ \hline
-           \end{tabular}
-           \caption{Other Derivations}
-           \label{tab:derivations}
-       \end{table}
-       
+    \begin{table}[H]
+        \centering
+        % First Tabular: Motion Parameters
+        \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
+            \hline
+            \textbf{Parameter} & $\bm{x}$ & $\bm{y}$ \\ \hline
+            Acceleration / $a$ & $a_x = 0$ & $a_y = g = 9.81 \, \text{m/s}^2$ \\ \hline
+            Initial Velocity / $u$ / $v(0)$ & $u_x = u \cos(\theta)$ & $u_y = u \sin(\theta)$ \\ \hline
+            Velocity / $v(t)$ & $v_x(t) = u_x$ & $v_y(t) = u_y - gt$ \\ \hline
+            Displacement / $s(t)$ & $s_x(t) = u_x t$ & $s_y(t) = u_y t - \frac{1}{2}gt^2 + h$ \\ \hline
+        \end{tabular}
+        \vspace{1em}  % Space between sections
+        
+        % Second Tabular: Time of Flight
+        \begin{tabular}{|>{\centering\arraybackslash}p{0.3\textwidth}|>{\centering\arraybackslash}p{0.3\textwidth}|}
+            \hline
+            Time of Flight / $T$ / $s_y(t)=0$ & $\frac{1}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ \\ \hline
+        \end{tabular}
+        \vspace{1em}  % Space between sections
+        
+        % Third Tabular: Range and Maximum Height Components
+        \begin{tabular}{|>{\centering\arraybackslash}p{0.4\textwidth}|>{\centering\arraybackslash}p{0.25\textwidth}|>{\centering\arraybackslash}p{0.25\textwidth}|}
+            \hline
+            \textbf{Parameter} & $\bm{x}$ & $\bm{y}$ \\ \hline
+            Velocity at Separation / $v(T)$ & $v_x(T) = u_x$ & $v_y(T) = \sqrt{u_y^2 + 2gh}$ \\ \hline
+            Range / $R$ / \(s_x(T)\)& $\frac{u_x}{g}\left(u_y + \sqrt{u_y^2 + 2gh}\right)$ & $-h$ \\ \hline
+            Maximum Height / $H$ / $s(v_y(t)=0)$& \(\frac{u_y u_x}{g}\) & $\frac{u_y^2}{2g} + h$ \\ \hline
+        \end{tabular}
+        
+        \caption{Derivations of Projectile Motion Parameters and Their Component Forms}
+        \label{tab:combined_motion_parameters}
+    \end{table}
+        
         % Table for Circular Motion Parameters
         \begin{table}[H]
             \centering
@@ -756,7 +846,7 @@
                 Angular Velocity / $\omega(t)$ & $\frac{d}{dt}(\theta(t))$ \\ \hline
                 Angular Acceleration / $\alpha(t)$ & $\frac{d}{dt}(\omega(t))$ \\ \hline
             \end{tabular}
-            \caption{Circular Motion Parameters}
+            \caption{Circular Motion}
             \label{tab:circular_motion}
         \end{table}
        
@@ -774,31 +864,17 @@
                 Power (P) & $m a_x u_x = 0$ & $m a_y u_y = m g u_y$ \\ \hline
                 Work Done (W) & 0 & $mgh$ \\ \hline
             \end{tabular}
-            \caption{Typical Energy Components in Projectile Motion (Non-Drag)}
+            \caption{Energy Components in Projectile Motion (Non-Drag)}
             \label{tab:non_drag_energy}
         \end{table}
         
         \vspace{1em}
         
-        % Table for Drag Energy Components
-        \begin{table}[H]
-            \centering
-            \begin{tabular}{|>{\centering\arraybackslash}p{0.35\textwidth}|>{\centering\arraybackslash}p{0.27\textwidth}|>{\centering\arraybackslash}p{0.27\textwidth}|}
-                \hline
-                Energy Component & $x$ & $y$ \\ \hline
-                Drag Force / $F_d$ & $F_{d_x} = \frac{1}{2} \rho C_d A v_x^2$ & $F_{d_y} = \frac{1}{2} \rho C_d A v_y^2$ \\ \hline
-                Energy Loss due to Drag / $E_d$ & $\int F_{d_x} \, dx$ & $\int F_{d_y} \, dy$ \\ \hline
-                Total Energy with Drag / $TE_d$ & $\frac{1}{2}m u_x^2 - \int F_{d_x} \, dx$ & $\frac{1}{2}m u_y^2 + mgh - \int F_{d_y} \, dy$ \\ \hline
-                Total Lagrangian with Drag / $\mathscr{L}_d$ & $\frac{1}{2}m u_x^2 - \int F_{d_x} \, dx$ & $\frac{1}{2}m u_y^2 - mgh - \int F_{d_y} \, dy$ \\ \hline
-            \end{tabular}
-            \caption{Energy Components with Drag in Projectile Motion}
-            \label{tab:drag_energy}
-        \end{table}
-    Im not gonna implement all of these just some
+    I will not be implementing drag components (air-resistance), as they are complex and at this point i know i am doing more than what the question asks. In so I will focus solely on the motion parameters rather than energy quantities in the script.\\[2em]
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q5.m}{matlab scripts/q5.m}}}}]{matlab scripts/q5.m}
 
     \includegraphics[width=1\textwidth]{images/Projectile_motion.png}
-    \includegraphics[width=0.8\textwidth]{images/q5.png}
+    \includegraphics[width=1\textwidth]{images/q5cmd.png}
     
     \newpage
     \begin{tcolorbox}[title={\color{black}{\section{Q6}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
@@ -817,7 +893,7 @@
     \includegraphics[width=1\textwidth]{images/pressurevolume.png}
     \includegraphics[width=0.6\textwidth]{images/q6.png}
     
-    \newpage
+    \newpage\newgeometry{margin=1in,left=0.6in,right=0.6in,bottom=0.2in}
     \begin{tcolorbox}[title={\color{black}{\section{Q7}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]
          A student has a summer job as a lifeguard at the beach.\\[8pt]
          After spotting a swimmer in trouble, they try to determine the path that will allow them to reach the swimmer in the shortest time.\\[1em] 
@@ -909,16 +985,33 @@
          whether your result satisfies Snell's law of refraction:
          \[\frac{\sin \phi}{\sin \alpha} = \frac{v_{\text{run}}}{v_{\text{swim}}}\]
     \end{tcolorbox}
-    The total time \( t \) to reach the swimmer consists of two components: the time spent running along the shore and the time spent swimming to the swimmer.\\[8pt]
-    \textbf{1. Running Time} The running distance \( C_s \) in the ideal path \( C \) is determined by the vertical distance \( y \) and the horizontal distance \( d_s \). Thus, the distance the lifeguard runs to the shore is given by:
-    \[ C_s = \sqrt{y^2 + d_s^2} \]
-    Knowing the running distance \( C_s \), we can express the running time in terms of velocity and time:
-    \[ t_{\text{run}} = \frac{C_s}{v_{\text{run}}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}} \]\\[8pt]
-    \textbf{2. Swimming Time} After reaching point \( y \), the lifeguard swims directly to the swimmer. The swimming distance \( C_w \) is determined by the horizontal distance \( L - y \) and the vertical distance \( d_s \). Thus, the distance the lifeguard swims is given by:
-    \[ C_w = \sqrt{d_s^2 + (L - y)^2} \]
-    The swimming time \( t_{\text{swim}} \) is then given by:
-    \[ t_{\text{swim}} = \frac{C_w}{v_{\text{swim}}} = \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}} \]
-    As an alternative, we may correlate $C_w$ with another triangle that involves \( d_w \) the swimmer's horizontal distance from the shore\\[8pt]
+    The total time \( t \) to reach the swimmer has two parts:\\[8pt]
+    
+    \begin{minipage}{0.47\textwidth}
+        \textbf{1. Running Time}: The running distance \( C_s \) from the starting point to the shore is based on the vertical distance \( y \) and horizontal distance \( d_s \):
+        \[
+        C_s = \sqrt{y^2 + d_s^2}
+        \]
+        Thus, the running time is:
+        \[
+        t_{\text{run}} = \frac{C_s}{v_{\text{run}}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}}
+        \]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.485\textwidth}    
+        \textbf{2. Swimming Time}: After reaching \( y \), the lifeguard swims directly to the swimmer. The swimming distance \( C_w \) is based on the horizontal distance \( L - y \) and the vertical distance \( d_s \):
+        \[
+        C_w = \sqrt{d_s^2 + (L - y)^2}
+        \]
+        Thus, the swimming time is:
+        \[
+        t_{\text{swim}} = \frac{C_w}{v_{\text{swim}}} = \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}}
+        \]
+    \end{minipage}\\[1em]
+   
+    Alternatively, \( C_w \) can be related to another triangle involving \( d_w \), the swimmer’s horizontal distance from the shore.
+
+    
     \textbf{3. Total Time} Combining both components, the total time \( t \) required to reach the swimmer is:
     \[ t = t_{\text{run}} + t_{\text{swim}} = \frac{\sqrt{y^2 + d_s^2}}{v_{\text{run}}} + \frac{\sqrt{d_s^2 + (L - y)^2}}{v_{\text{swim}}} \]
     Substituting the known values, we have:
@@ -1083,30 +1176,34 @@
     \textbf{Summary}
     \begin{itemize}[itemsep=-0.1cm]
         \item \textbf{Expression for \( D(t) \)}: The distance between the aircraft as a function of time is
-        \[D(t) = \sqrt{(800 - 320t)^2 + (410 - 160t)^2}\]
-        \item \textbf{Finding Minimum Distance}: Use MATLAB’s \texttt{min} function to find the minimum \( D(t) \) and the corresponding time \( t \).        
-        \item \textbf{Solving \( D(t) = 30 \)}: Set \( D(t) = 30 \) and use MATLAB’s \texttt{roots} function to find the time \( t \) when the aircraft are first within \( 30 \, \text{mi} \) of each other.
+        \[D(t) = \sqrt{(x_0 - V_A t)^2 + (y_0 - V_B t)^2}\]
+        \item \textbf{Finding Minimum Distance}: Use MATLAB’s \texttt{min} function to find the minimum \( D(t) \) and the corresponding time \( t \).
+        \item \textbf{Solving \( D(t) = 30 \)}: Set \( D(t) = 30 \) and use MATLAB’s \texttt{roots} function to find the time \( t \) when the aircraft are first within \( 30 \, \text{mi} \) of each other. we need in form of quadratic for \texttt{roots} function:
+        \[0 = (V_A + V_B)t^2 - 2(V_A x_0 + V_B y_0)t + (x_0^2 + y_0^2 - 30^2)\]
+        this yields the roots; using \texttt{min(root(coeff))} will give the first time the distance reaches \( 30 \, \text{mi} \).
     \end{itemize}
 
-    
-    
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q10.m}{matlab scripts/q10.m}}}}]{matlab scripts/q10.m}
     
 
     \includegraphics[width=1\textwidth]{images/aircraft_distance_plot.png}
-    \includegraphics[width=0.6\textwidth]{images/q10.png}
+    \includegraphics[width=1\textwidth]{images/q10.png}
     
     \newpage
     
     \begin{tcolorbox}[title={\color{black}{\section{Q11}}}, colback=white, colframe=\ni, boxrule=1mm, width=1\textwidth]    
         A two-dimensional state of stress at a point in a loaded material in the direction defined by the \( x - y \) coordinate system is defined by three components of stress \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \). The stresses at the point in the direction defined by the \( x' - y' \) coordinate system are calculated by the stress transformation equations:
         \[\sigma_{x' x'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} + \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) + \tau_{xy} \sin(2\theta)\]
-        \[\sigma_{y' y'} = \frac{\sigma_{xx} + \sigma_{yy}}{2} - \frac{\sigma_{xx} - \sigma_{yy}}{2} \cos(2\theta) - \tau_{xy} \sin(2\theta)\]
+        \[\sigma_{y' y'} = \sigma_{xx} + \sigma_{yy} - \sigma_{x'x'}\]
         \[\tau_{x' y'} = -\frac{\sigma_{xx} - \sigma_{yy}}{2} \sin(2\theta) + \tau_{xy} \cos(2\theta)\]
         where \( \theta \) is the angle shown in the figure.\\[8pt]
         Write a user-defined MATLAB function that determines the stresses \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \) given the stresses \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the angle \( \theta \). For the function name and arguments, use 
         \[[\text{Strain}] = \text{StressTrans}(S, \theta)\]
-        The input argument \( S \) is a vector with the values of the three stress components \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the input argument \( \theta \) is a scalar with the value of \( \theta \). The output argument \text{Strain} is a vector with the values of the three stress components \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \).
+        The input argument \( S \) is a vector with the values of the three stress components \( \sigma_{xx} \), \( \sigma_{yy} \), and \( \tau_{xy} \), and the input argument \( \theta \) is a scalar with the value of \( \theta \).\\[8pt]
+        The output argument \text{Strain} is a vector with the values of the three stress components \( \sigma_{x' x'} \), \( \sigma_{y' y'} \), and \( \tau_{x' y'} \).
    \end{tcolorbox}
+   
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/q11.m}{matlab scripts/q11.m}}}}]{matlab scripts/q11.m}
+    \includegraphics[width=0.6\textwidth]{images/q11.png}
+
 \end{document}

@@ -9,9 +9,9 @@ Here's what you can expect in each part of the coursework:
 - This part includes my worked solutions, which I have compiled using **LaTeX**. I opted for LaTeX to ensure clean and organized mathematical expressions.
   
 ### Part B
-- This part is all about MATLAB code. I will be submitting well-commented code with relevant screenshots of the command window and graphs.
-  - The key here is that **all graph formatting is done purely via MATLAB code**.
-  - Additionally, the programs will be designed to ensure user-friendly input and neatly formatted output.
+- This part is about MATLAB code. I will be submitting well-commented code with relevant screenshots of the command window and graphs.
+  - all graph formatting is done purely via MATLAB code.
+  - the programs will be designed to ensure user-friendly input and neatly formatted output.
 
 ---
 

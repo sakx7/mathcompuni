@@ -459,48 +459,30 @@
     \end{minipage}\\
     \vspace{1em}
     To find $\beta$, we solve:
-    \[
-    0 = -(\beta x)^2 + \gamma
-    \]
-    \[
-    \beta = \frac{2\sqrt{\gamma}}{b}
-    \]
+    \[0 = -(\beta x)^2 + \gamma\]
+    \[\beta = \frac{2\sqrt{\gamma}}{b}\]
     since we know $\gamma$:
-    \[
-    \beta = \frac{2\sqrt{a}}{b}
-    \]
+    \[\beta = \frac{2\sqrt{a}}{b}\]
     Note: This requires $b \neq 0$ and $\sqrt{a} \neq 0$ (i.e., $a > 0$).\\
     Substituting $\gamma$ and $\beta$ into our original equation:
-    \[
-    \boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}
-    \]
+    \[\boxed{y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a}\]
     This is our final parabola equation in terms of $a$ and $b$.\\
-    
     \subsection{General Formula for Arc Length}
     In general, the arc length $L$ of a function $f(x)$ from $x_1$ to $x_2$ is given by the formula:
-    \[
-    L = \int_{x_1}^{x_2} \sqrt{1 + \left( \frac{d}{dx}(f(x)) \right)^2} \, dx
-    \]
+    \[L = \int_{x_1}^{x_2} \sqrt{1 + \left( \frac{d}{dx}(f(x)) \right)^2} \, dx\]
     For our function, we can substitute the derived equation $y = -\left(\frac{2\sqrt{a}}{b}x\right)^2 + a$ into this formula and compute the arc length from $-\frac{b}{2}$ to $\frac{b}{2}$.
-    
     \subsection{Simplification and Resulting Expression}
     After performing the integration, we arrive at the following expression for the arc length:
-    \[
-    L = \int_{-\frac{b}{2}}^{\frac{b}{2}} \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}
-    \]
+    \[L = \int_{-\frac{b}{2}}^{\frac{b}{2}} \sqrt{1 + \left(\frac{\partial}{\partial x}\left(-\left(\frac{2\sqrt{a}}{b}x\right)^2 + a\right)\right)^2} \, dx = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}\]
     This is the arc length of the parabola from $x = -\frac{b}{2}$ to $x = \frac{b}{2}$ for our derived expression.
-    
     \subsection{Comparison of the Two Expressions}
     We now compare this arc length expression with the expression in the question for the length $L_{ABC}$:
     \[L_{ABC} = \frac{1}{2}\sqrt{b^2 + 16a^2} + \frac{b^2}{8a}\ln\left(\frac{4a + \sqrt{b^2 + 16a^2}}{b}\right)\]
     \[L = \frac{4a \sqrt{b^{4} + 16a^{2} b^{2}} + \operatorname{arsinh}\left(\frac{4a}{b}\right) \, b^{3}}{8ab}\]
     Both expressions aim to approximate the arc length of the parabola, they involve different methods of formulation since i didnt get the exact match of an expression. But i aim to make sure my derived expression tries to matches $L_{ABC}$.
-        
     \subsection{matlab code}
     The following matlab code was used to perform the numerical evaluation:
- 
     \lstinputlisting[style=matlab, title=\textbf{\textcolor{\link}{\texttt{\href{https://github.com/sakx7/mathcompuni/blob/main/matlab scripts/expression.m}{matlab scripts/expression.m}}}}]{matlab scripts/expression.m}
-    
     \newpage
     \subsection{Numerical Evaluation}
     Using the python we evaluated both expressions for various values of $a$ and $b$.\\

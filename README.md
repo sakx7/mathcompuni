@@ -1,7 +1,9 @@
 
 ## Engineering Mathematics and Computing: Task 1
 
-This task is being submitted via CANVAS in PDF format only. Here's what you can expect in each part of the coursework:
+This task is being submitted via CANVAS in PDF format only. 
+This is the dir for the pdf in submission.
+Here's what you can expect in each part of the coursework:
 
 ### Part A
 - This part includes my worked solutions, which I have compiled using **LaTeX**. I opted for LaTeX to ensure clean and organized mathematical expressions.

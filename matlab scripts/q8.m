@@ -16,16 +16,32 @@ true_strain=log(L/L0);
 true_stress=F.*L0./(A0*L)/1e6; % Convert N/m^2 to MPa
 
 % Plot the curves
-figure;
-plot(eng_strain,eng_stress,'b-');
+
+fig = figure ;
+
+plot(eng_strain,eng_stress,'b-', 'Linewidth',2);
 hold on;
-plot(true_strain,true_stress,'r--');
+plot(true_strain,true_stress,'r-', 'Linewidth',2);
 xlabel('Strain');
 ylabel('Stress (MPa)');
 title('Engineering vs True Stress-Strain Curves');
-legend('Engineering','True');
+legend('Engineering','True', 'Location', 'best');
 grid on;
 hold off;
+ax = gca;
+
+fig.Color='w';
+
+ax.XGrid='on';
+ax.YGrid='on';
+ax.XMinorGrid='on';
+ax.YMinorGrid='on';
+ax.XMinorTick='on';
+ax.YMinorTick='on';
+
+ax.TickDir='out';
+ax.FontName='Calibri';
+ax.FontSize=12;
 
 % Save as png to print
 print('-dpng','-r300','stressvstran.png')

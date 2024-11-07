@@ -31,6 +31,19 @@ t_30_all=t_30_all(t_30_all>0); % used as negative time values would not make sen
 t_30_first=min(t_30_all);
 t_30_second=max(t_30_all);
 
+
+function applyAxesFormatting(ax)
+    ax.XGrid = 'on';
+    ax.YGrid = 'on';
+    ax.XMinorGrid = 'on';
+    ax.YMinorGrid = 'on';
+    ax.XMinorTick = 'on';
+    ax.YMinorTick = 'on';
+    ax.TickDir = 'out';
+    ax.FontName = 'Calibri';
+    ax.FontSize = 12;
+end
+
 % Mark the points where distance is exactly 30 miles
 plot([t_30_first,t_30_second],[30,30],'o','MarkerSize',6,'MarkerFaceColor','#7E2F8E')
 text(t_30_first,30,sprintf('%.2f hr',t_30_first),'FontSize',14,'VerticalAlignment','bottom','HorizontalAlignment','right','Color','#7E2F8E')
@@ -44,6 +57,8 @@ grid on
 axis([0 t(end) 0 max(D)+50])
 set(gca,'FontSize',12)
 box on
+applyAxesFormatting(gca);
+
 
 % Save the figuret
 print('-dpng','-r300','aircraft_distance_plot.png');

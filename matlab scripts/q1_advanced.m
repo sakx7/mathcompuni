@@ -20,6 +20,17 @@ function interactive_parabola()
     % Create figure and axes
     fig=figure('Position',[100,100,1000,600]);
     ax=axes('Parent',fig,'Position',[0.1,0.3,0.8,0.6]);
+    function applyAxesFormatting(ax)
+        ax.XGrid = 'on';
+        ax.YGrid = 'on';
+        ax.XMinorGrid = 'on';
+        ax.YMinorGrid = 'on';
+        ax.XMinorTick = 'on';
+        ax.YMinorTick = 'on';
+        ax.TickDir = 'out';
+        ax.FontName = 'Calibri';
+        ax.FontSize = 12;
+    end
     
     % Create sliders and reset button
     slider_a=uicontrol('Style','slider','Min',0.1,'Max',20,'Value',initial_a,...
@@ -45,6 +56,7 @@ function interactive_parabola()
         
         % Plot parabola and key points
         cla(ax);
+        applyAxesFormatting(ax)
         plot(ax,x,y,'b','DisplayName','$y=-\left(\frac{2\sqrt{a}}{b}x\right)^2+a$')
         hold(ax,'on')
         plot(ax,[0,0],[0,a],'r','DisplayName','a (height)');

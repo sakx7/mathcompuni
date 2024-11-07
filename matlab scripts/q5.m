@@ -64,42 +64,62 @@ fprintf('Maximum angle (theta(t)): %.2f degrees at t = %.2f seconds\n',max_theta
 % Set up the figure
 figure('Position',[100,100,800,600]);
 
+% gudlines
+function applyAxesFormatting(ax)
+    ax.XGrid = 'on';
+    ax.YGrid = 'on';
+    ax.XMinorGrid = 'on';
+    ax.YMinorGrid = 'on';
+    ax.XMinorTick = 'on';
+    ax.YMinorTick = 'on';
+    ax.TickDir = 'out';
+    ax.FontName = 'Calibri';
+    ax.FontSize = 12;
+end
+
+% Create figure with white background
+fig = figure;
+fig.Color = 'w';
+
 % Plot trajectory in Cartesian coordinates
 subplot(2,1,1);
-plot(s_x,s_y);
+plot(s_x, s_y, 'b-', 'LineWidth', 2);
 title('Projectile Motion Trajectory');
 xlabel('Displacement in X (m)');
 ylabel('Displacement in Y (m)');
-grid on;
 hold on;
-plot(u_x*u_y/g,H,'x','MarkerSize',10,'LineWidth',2,'Color',[0.059,0.125,1],'DisplayName','Max Height');
-legend('Trajectory','Max Height','Location','best');
+plot(u_x*u_y/g, H, 'x', 'MarkerSize', 10, 'LineWidth', 2, 'Color', [0.059, 0.125, 1], 'DisplayName', 'Max Height');
+legend('Trajectory', 'Max Height', 'Location', 'best');
 hold off;
+applyAxesFormatting(gca);
 
 % Plot radial distance over time
 subplot(2,2,3);
-plot(t,r,'Color',[0,0.85,0],'DisplayName','r(t)');
+plot(t, r, 'Color', [0, 0.85, 0], 'LineWidth', 2, 'DisplayName', 'r(t)');
 hold on;
-plot(max_time_r,max_r,'x','MarkerSize',10,'LineWidth',2,'Color',[0,0.85,0],'DisplayName','Max r(t)');
+plot(max_time_r, max_r, 'x', 'MarkerSize', 10, 'LineWidth', 2, 'Color', [0, 0.85, 0], 'DisplayName', 'Max r(t)');
 xlabel('Time (s)');
 ylabel('Radial Distance (m)');
 title('Radial Distance r(t)');
-grid on;
-legend('Location','best');
+legend('Location', 'best');
 hold off;
+applyAxesFormatting(gca);
 
 % Plot angle theta(t) over time
 subplot(2,2,4);
-plot(t,rad2deg(theta_t),'r-','DisplayName','theta(t)');
+plot(t, rad2deg(theta_t), 'r-', 'LineWidth', 2, 'DisplayName', 'theta(t)');
 hold on;
-plot(max_time_theta,rad2deg(max_theta),'x','MarkerSize',10,'LineWidth',2,'Color','r','DisplayName','Max theta(t)');
+plot(max_time_theta, rad2deg(max_theta), 'x', 'MarkerSize', 10, 'LineWidth', 2, 'Color', 'r', 'DisplayName', 'Max theta(t)');
 xlabel('Time (s)');
 ylabel('Angle theta(t) (degrees)');
 title('Angle theta(t)');
-grid on;
-legend('Location','best');
+legend('Location', 'best');
 hold off;
+applyAxesFormatting(gca); 
 
-% Set overall title and save figure
+
+% Set overall title for the figure
 sgtitle('Projectile Motion Analysis');
-print('-dpng','-r300','Projectile_Motion.png')
+
+% Save figure as PNG with high resolution
+print('-dpng', '-r300', 'Projectile_Motion.png');
